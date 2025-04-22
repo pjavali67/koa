@@ -1,12 +1,18 @@
 "use client";
 import React, { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
-import TopBarActionLinks from "@/components/TopBarActionLinks";
+import TopBarActionLinks from "./TopBarActionLinks";
+import { Icon } from "@iconify/react";
 async function loadFlyonUI() {
   return import("../../node_modules/flyonui/flyonui.js");
-  // import("./../../node_modules/flyonui/flyonui.css");
 }
 function Navbar() {
+  const router = useRouter();
+
+  const aboutusClick = () => {
+    router.push("/aboutus");
+  };
   useEffect(() => {
     const initFlyonUI = async () => {
       await loadFlyonUI();
@@ -18,36 +24,33 @@ function Navbar() {
     <div>
       <header>
         <nav>
-          <div className="bg-cyan-600 w-100% h-16">
-            {" "}
+          <div className="bg-cyan-600 w-100%  ">
             <TopBarActionLinks />
           </div>
         </nav>
-        <div className="h-27 max-md:h-[31.25rem]">
-          <nav className="navbar rounded-box shadow-base-300/25 shadow-sm h-25">
+        <div className=" ">
+          <nav className="navbar rounded-box shadow-base-300/25 shadow-sm h-20">
             <div className="navbar-start   ">
-              <span className="flex items-center justify-start gap-2">
-                {/* <img src={Logo} alt="KOA Logo" className="h-10 w-10" /> */}
+              <span className="flex items-center justify-start gap-2 hidden">
                 <Image
                   src="/images/KOA_logo.png"
                   alt="Logo"
                   width={40}
                   height={40}
                   className="rounded m-1 mt-2 flex-none"
-                />{" "}
-                <a
-                  className="link text-base-content link-neutral text-xl font-bold no-underline "
-                  href="#"
+                />
+                <button
+                  className="button text-base-content button-neutral text-xl font-bold no-underline "
+                  onClick={() => {
+                    router.push("/");
+                  }}
                 >
                   Karnataka Orthopaedic Association
-                </a>
+                </button>
               </span>
             </div>
             <div className="navbar-center max-md:hidden">
               <ul className="menu menu-horizontal gap-2 p-0 text-base rtl:ml-20">
-                <li>
-                  <a href="#">Home</a>
-                </li>
                 <li className="dropdown relative inline-flex [--auto-close:inside] [--offset:9] [--placement:bottom-end]">
                   <button
                     id="dropdown-end"
@@ -56,8 +59,9 @@ function Navbar() {
                     aria-haspopup="menu"
                     aria-expanded="false"
                     aria-label="Dropdown"
+                    onClick={aboutusClick}
                   >
-                    About us
+                    KOA Office
                     <span className="icon-[tabler--chevron-down] dropdown-open:rotate-180 size-4"></span>
                   </button>
                   <ul
@@ -67,59 +71,93 @@ function Navbar() {
                     aria-labelledby="nested-dropdown"
                   >
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <button
+                        onClick={() => {
+                          router.push("/ourmessage");
+                        }}
+                      >
                         Our Message
-                      </a>
+                      </button>
+                      {/* <button className="dropdown-item" href="/ourmessage">
+                       
+                      </button> */}
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
-                        Office Bearers 2024-25
-                      </a>
+                      <button
+                        onClick={() => {
+                          router.push("/officebearers");
+                        }}
+                      >
+                        Office Bearers
+                      </button>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <button
+                        onClick={() => {
+                          router.push("/DistictChapters");
+                        }}
+                      >
                         District Chapters
-                      </a>
+                      </button>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
-                        Subspecialty Committees
-                      </a>
+                      <button
+                        onClick={() => {
+                          router.push("/committees");
+                        }}
+                      >
+                        Committees
+                      </button>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <button
+                        onClick={() => {
+                          router.push("/pastofficers");
+                        }}
+                      >
+                        Past Officiers
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        onClick={() => {
+                          router.push("/ByLaws");
+                        }}
+                      >
                         KOA Bylaws & Blue Book
-                      </a>
+                      </button>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
-                        Office Bearers 2023-24
-                      </a>
+                      <button
+                        onClick={() => {
+                          router.push("/koabulletin");
+                        }}
+                      >
+                        KOA Bulletin
+                      </button>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <button
+                        className="dropdown-item"
+                        onClick={() => {
+                          router.push("/historyofortho");
+                        }}
+                      >
                         History of Orthopaedics
-                      </a>
+                      </button>
                     </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Past Offices
-                      </a>
-                    </li>
-                    {/* <li className="dropdown relative [--auto-close:inside] [--offset:10] [--placement:right-start]"></li> */}
                   </ul>
                 </li>
-                {/* <li>
-                  <a href="#">About</a>
-                </li> */}
+
                 <li className="dropdown relative inline-flex [--auto-close:inside] [--offset:9] [--placement:bottom-end]">
                   <button
-                    id="dropdown-end"
+                    id="dropdown-end-1"
                     type="button"
                     className="dropdown-toggle dropdown-open:bg-base-content/10 dropdown-open:text-base-content max-md:px-2"
                     aria-haspopup="menu"
                     aria-expanded="false"
                     aria-label="Dropdown"
+                    onClick={() => router.push("/academics")}
                   >
                     Academics
                     <span className="icon-[tabler--chevron-down] dropdown-open:rotate-180 size-4"></span>
@@ -131,74 +169,87 @@ function Navbar() {
                     aria-labelledby="nested-dropdown"
                   >
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <button onClick={() => router.push("/academiccalendar")}>
                         Acadamic Calendar
-                      </a>
+                      </button>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <button onClick={() => router.push("/fellowship")}>
                         Fellowship
-                      </a>
+                      </button>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <button
+                        className="dropdown-item"
+                        onClick={() => router.push("/books")}
+                      >
                         Books
-                      </a>
+                      </button>
                     </li>
-
-                    {/* <li className="dropdown relative [--auto-close:inside] [--offset:10] [--placement:right-start]"></li> */}
                   </ul>
                 </li>
                 <li className="dropdown relative inline-flex [--auto-close:inside] [--offset:9] [--placement:bottom-end]">
                   <button
-                    id="dropdown-end"
                     type="button"
                     className="dropdown-toggle dropdown-open:bg-base-content/10 dropdown-open:text-base-content max-md:px-2"
                     aria-haspopup="menu"
                     aria-expanded="false"
                     aria-label="Dropdown"
+                    onClick={() => router.push("/news")}
                   >
                     News
-                    <span className="icon-[tabler--chevron-down] dropdown-open:rotate-180 size-4"></span>
+                    {/* <span className="icon-[tabler--chevron-down] dropdown-open:rotate-180 size-4"></span> */}
                   </button>
-                  <ul
+                  {/* <ul
                     className="dropdown-menu dropdown-open:opacity-100 hidden w-60"
                     role="menu"
                     aria-orientation="vertical"
                     aria-labelledby="nested-dropdown"
                   >
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <button
+                        className="dropdown-item"
+                        onClick={() => router.push("/announcements")}
+                      >
                         Announcements
-                      </a>
+                      </button>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <button
+                        className="dropdown-item"
+                        onClick={() => router.push("/news2024")}
+                      >
                         News-2024
-                      </a>
+                      </button>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <button
+                        className="dropdown-item"
+                        onClick={() => router.push("/news2023")}
+                      >
                         News-2023
-                      </a>
+                      </button>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <button
+                        className="dropdown-item"
+                        onClick={() => router.push("/archives")}
+                      >
                         Archives
-                      </a>
+                      </button>
                     </li>
+                  </ul> */}
+                </li>
+                <li>
+                  <button onClick={() => router.push("/events")}>Events</button>
+                </li>
 
-                    {/* <li className="dropdown relative [--auto-close:inside] [--offset:10] [--placement:right-start]"></li> */}
-                  </ul>
-                </li>
                 <li>
-                  <a href="#">KOA Bulletin</a>
-                </li>
-                <li>
-                  <a href="#">Blog</a>
+                  <button onClick={() => router.push("/blog")}>Blog</button>
                 </li>
               </ul>
             </div>
+            {/* mobile navbar start here */}
             <div className="navbar-end items-center gap-4">
               <div className="dropdown relative inline-flex [--placement:bottom] md:hidden">
                 <button
@@ -236,14 +287,10 @@ function Navbar() {
                       aria-labelledby="nested-dropdown"
                     >
                       <li>
-                        <a className="dropdown-item" href="#">
-                          Academics
-                        </a>
+                        <button className="dropdown-item">Academics</button>
                       </li>
                       <li>
-                        <a className="dropdown-item" href="#">
-                          News
-                        </a>
+                        <button className="dropdown-item">News</button>
                       </li>
                       <li className="dropdown relative [--auto-close:inside] [--offset:10] md:[--placement:right-start] [--placement:bottom]">
                         <button
@@ -277,7 +324,7 @@ function Navbar() {
                           </li>
                           <li className="dropdown relative [--auto-close:inside] [--offset:10] md:[--placement:right-start] [--placement:bottom]">
                             <button
-                              id="nested-dropdown-2"
+                              id="nested-dropdown-6"
                               className="dropdown-toggle dropdown-item dropdown-open:bg-base-content/10 dropdown-open:text-base-content justify-between"
                               aria-haspopup="menu"
                               aria-expanded="false"
@@ -331,9 +378,17 @@ function Navbar() {
                   </li>
                 </ul>
               </div>
-              <a className="btn btn-primary" href="#">
-                Login
-              </a>
+              <button className="btn btn-primary hidden">
+                Find A Orthopaedician
+                <span>
+                  <Icon
+                    icon="mdi:magnify"
+                    className="text-white hover:text-black w-6 h-6"
+                  />
+                </span>
+              </button>
+              <button className="btn btn-primary">Join KOA</button>
+              <button className="btn btn-primary">Login</button>
             </div>
           </nav>
         </div>

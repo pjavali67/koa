@@ -1,94 +1,78 @@
-// "use client";
+"use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { Audio } from "react-loader-spinner";
+type HerosectionImages = {
+  id: string;
+  url: string;
+  alt: string;
+};
 
 function Herosection() {
+  const [images, setImages] = useState<HerosectionImages[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  useEffect(() => {
+    fetch("/data/heroCarousel.json")
+      .then((res) => res.json())
+      .then((data) => setImages(data));
+    setIsLoading(true);
+  }, [images]);
+
   return (
-    <div
-      id="image"
-      data-carousel='{ "loadingclassNamees": "opacity-0" }'
-      className="relative w-full overflow-hidden"
-    >
-      <div className="carousel ">
-        <div className="carousel-body h-1/4 opacity-0">
-          {/* <!-- Slide 1 --> */}
-          <div className="carousel-slide">
-            <div className="flex h-full justify-center">
-              <Image
-                src="/images/image2.jpg"
-                className="size-full object-cover"
-                alt="image2"
-                width={500}
-                height={300}
-              />
+    <>
+      {!isLoading ? (
+        <div className="h-screen w-full flex justify-center items-center">
+          <Audio
+            height="80"
+            width="80"
+            color="#4fa94d"
+            ariaLabel="three-dots-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+          />
+        </div>
+      ) : (
+        <div
+          id="image"
+          data-carousel='{ "loadingclassNamees": "opacity-0" }'
+          className=" relative w-full overflow-hidden pl-2 pr-2 pb-2  "
+        >
+          <div className="carousel ">
+            <div className="carousel-body h-1/4 opacity-0">
+              {images.map((image) => (
+                <div className="carousel-slide" key={image.id}>
+                  <div className="flex h-full justify-center">
+                    <Image
+                      src={image.url}
+                      className="size-full object-cover  aspect-[16/9]"
+                      alt={image.alt}
+                      width={500}
+                      height={300}
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
-          </div>
-          {/* <!-- Slide 2 --> */}
-          <div className="carousel-slide">
-            <div className="flex h-full justify-center">
-              <Image
-                src="/images/image3.jpg"
-                className="size-full object-cover"
-                alt="image3"
-                width={500}
-                height={500}
-              />
-            </div>
-          </div>
-          {/* <!-- Slide 3 --> */}
-          <div className="carousel-slide">
-            <div className="flex h-full justify-center">
-              <Image
-                src="/images/image4.jpg"
-                className="size-full object-cover"
-                alt="image4"
-                width={500}
-                height={300}
-              />
-            </div>
-          </div>
-          {/* <!-- Slide 4 --> */}
-          <div className="carousel-slide">
-            <div className="flex h-full justify-center">
-              <Image
-                src="/images/image5.jpg"
-                className="size-full object-cover"
-                alt="image5"
-                width={500}
-                height={300}
-              />
-            </div>
-          </div>
-          {/* <!-- Slide 5 --> */}
-          <div className="carousel-slide">
-            <div className="flex h-full justify-center">
-              <Image
-                src="/images/image1.jpg"
-                className="size-full object-cover"
-                alt="image1"
-                width={500}
-                height={300}
-              />
-            </div>
+
+            <button type="button" className="carousel-prev">
+              <span className="size-9.5 bg-base-100 flex items-center justify-center rounded-full shadow-base-300/20 shadow-sm bg-purple-500">
+                <span className="icon-[tabler--chevron-left] size-5 cursor-pointer rtl:rotate-180 bg-white"></span>
+              </span>
+              <span className="sr-only">Previous</span>
+            </button>
+
+            <button type="button" className="carousel-next ">
+              <span className="sr-only ">Next</span>
+              <span className="size-9.5 bg-base-100 flex items-center justify-center rounded-full shadow-base-300/20 shadow-sm bg-purple-500">
+                <span className="icon-[tabler--chevron-right] size-5 cursor-pointer rtl:rotate-180 bg-white"></span>
+              </span>
+            </button>
           </div>
         </div>
-      </div>
-      {/* <!-- Previous Slide --> */}
-      <button type="button" className="carousel-prev">
-        <span className="size-9.5 bg-base-100 flex items-center justify-center rounded-full shadow-base-300/20 shadow-sm">
-          <span className="icon-[tabler--chevron-left] size-5 cursor-pointer rtl:rotate-180"></span>
-        </span>
-        <span className="sr-only">Previous</span>
-      </button>
-      {/* <!-- Next Slide --> */}
-      <button type="button" className="carousel-next">
-        <span className="sr-only">Next</span>
-        <span className="size-9.5 bg-base-100 flex items-center justify-center rounded-full shadow-base-300/20 shadow-sm">
-          <span className="icon-[tabler--chevron-right] size-5 cursor-pointer rtl:rotate-180"></span>
-        </span>
-      </button>
-    </div>
+      )}
+    </>
   );
 }
 

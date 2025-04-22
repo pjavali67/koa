@@ -1,9 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+
 @plugin "@iconify/tailwind4";
 @plugin "flyonui";
 @import "../../node_modules/flyonui/variants.css";
 @source "../../node_modules/flyonui/flyonui.js"
+@plugin "daisyui";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -116,11 +118,7 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+.footerlink {
+  --link-color: #fff; /* Change this to your desired link color */
+  --hover-link-color: #ccc; /* Change this to the hover effect color */
 }

@@ -21,10 +21,10 @@ export default function OurMessage() {
               <h2 className="text-base/7 font-semibold text-indigo-600">
                 Our Message
               </h2>
-              <p className="mt-2 text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
+              <p className="mt-2 text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl ">
                 KOA President’s Theme, 2024 – 25 “Collaborate – Share – Support”
               </p>
-              <p className="mt-6 text-lg/8 text-gray-600">
+              <p className="mt-6 text-lg/8 text-gray-600 text-justify">
                 This community has been setup for the Karnataka Orthopaedic
                 Association Members and will attempt to be a high quality forum
                 for academic discussion, provide an information sharing service
@@ -39,7 +39,7 @@ export default function OurMessage() {
           </div>
           <div>
             <div className=" mt-20 grid grid-cols-2 gap-x-8 gap-y-8 sm:gap-y-16">
-              <span className="gi">
+              <span className="">
                 {" "}
                 <Image
                   src="/assets/members/Dr-Anil-B-Patil-1.jpg"
