@@ -1,12 +1,7 @@
 import React from "react";
 
-function SubHeading({ title, subtitle }: { title: string; subtitle?: string }) {
-  return (
-    <div>
-      {subtitle}
-      {title}
-    </div>
-  );
+function SubHeading() {
+  return <div>SubHeading</div>;
 }
 
 export default SubHeading;
