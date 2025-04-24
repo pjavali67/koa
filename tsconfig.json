@@ -29,7 +29,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/jobs"
+    "src/app/jobs",
+    "src/utils/ShowPdf.tsx"
   ],
   "exclude": ["node_modules"]
 }

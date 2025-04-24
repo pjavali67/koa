@@ -1,12 +1,13 @@
 "use client";
 import React from "react";
-
-import PdfWraper from "../pdf-wraper/PdfWraper";
+import dynamic from "next/dynamic";
+const PdfViewer = dynamic(() => import("@/utils/PdfViewer"), {
+  ssr: false,
+});
 
 export default function KoaBulletinPage() {
   return (
     <>
-      {" "}
       <h1 className="text-xl font-bold mb-6 mt-10 ml-15 mb-10">
         KOA Bulletin year wise{" "}
       </h1>
@@ -57,11 +58,9 @@ export default function KoaBulletinPage() {
             id="tabs-basic-1"
             role="tabpanel"
             aria-labelledby="tabs-basic-item-1"
+            className="bg-gray-200"
           >
-            <PdfWraper
-              url="/assets//2023.pdf"
-              fileName="KoA Bulletin 2023-2024"
-            />
+            <PdfViewer fileUrl="/assets/2023.pdf" />
           </div>
           <div
             id="tabs-basic-2"
