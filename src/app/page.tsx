@@ -1,9 +1,9 @@
-import FeatureCard from "@/components/FeatureCard";
-import FeatureSection from "@/components/FeatureSection";
+import FeatureCard from "../components/FeatureCard";
+import FeatureSection from "../components/FeatureSection";
 //import { Hero } from "@/components/Hero";
 //import HeroCarousel from "@/components/HeroCarousel";
-import Herosection from "@/components/herosection";
-import OurMessage from "@/components/OurMessage";
+import Herosection from "../components/herosection";
+import OurMessage from "../components/OurMessage";
 
 //import SimpleCarousel from "@/components/ui/SimpleCarousel";
 export default function Home() {

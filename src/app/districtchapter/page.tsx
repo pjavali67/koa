@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import { ColumnDef } from "@tanstack/react-table";
-import { DataTable } from "@/utils/data-table";
-import PageLayout from "@/utils/Pagelayout";
+import { DataTable } from "../../utils/data-table";
+import PageLayout from "../../utils/Pagelayout";
 
 type DistictChaptersProps = {
   name: string;
@@ -104,14 +104,14 @@ export const columns: ColumnDef<DistictChaptersProps>[]= [
 export default function DistrictChapterPage() {
   return (
     <>
-      <div classname="mt-2">
+      <div className="mt-2">
         <PageLayout
           title="District Chapters"
           description="District Chapters of the organization"
         />
       </div>
-      <div classname="p-6 m-20">
-        <h1 classname="text-2xl font-semibold mb-4">District Chapters</h1>
+      <div className="p-6 m-20">
+        <h1 className="text-2xl font-semibold mb-4">District Chapters</h1>
         <DataTable columns={columns} data={data} />
       </div>
     </>

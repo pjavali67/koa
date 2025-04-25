@@ -1,4 +1,4 @@
-import PageLayout from "@/utils/Pagelayout";
+import PageLayout from "../../utils/Pagelayout";
 import Image from "next/image";
 import Link from "next/link";
 

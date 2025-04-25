@@ -1,5 +1,5 @@
-import HistoryOfKoa from "@/components/historyofortho/HistoryOfKoa";
-import PageLayout from "@/utils/Pagelayout";
+import HistoryOfKoa from "../../components/historyofortho/HistoryOfKoa";
+import PageLayout from "../../utils/Pagelayout";
 import React from "react";
 
 function HistoryOfOrthoPage() {

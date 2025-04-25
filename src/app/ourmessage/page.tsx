@@ -1,7 +1,7 @@
 import React from "react";
-import PageLayout from "@/utils/Pagelayout";
-import PresidentsMessage from "@/components/ourmessage/PresidentsMessage";
-import SecretryMessage from "@/components/ourmessage/SecretryMessage";
+import PageLayout from "../../utils/Pagelayout";
+import PresidentsMessage from "../../components/ourmessage/PresidentsMessage";
+import SecretryMessage from "../../components/ourmessage/SecretryMessage";
 function OurMessagePage() {
   return (
     <>

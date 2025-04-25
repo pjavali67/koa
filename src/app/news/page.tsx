@@ -73,9 +73,9 @@
 //
 //     </main>
 //   );
-import { TabSwitcher } from "@/components/ui/TabSwitcher";
-import LatestNews from "@/components/news/LatestNews";
-import Annoucements from "@/components/news/Annoucements";
+import { TabSwitcher } from "../../components/ui/TabSwitcher";
+import LatestNews from "../../components/news/LatestNews";
+import Annoucements from "../../components/news/Annoucements";
 
 const Settings = () => (
   <div className="text-bold text-2xl">

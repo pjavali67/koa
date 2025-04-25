@@ -1,6 +1,6 @@
 import React from "react";
 //import PageLayout from "@/utils/Pagelayout";
-import Officebearers from "@/components/offiebearers/Officebearers";
+import Officebearers from "../../components/offiebearers/Officebearers";
 function OfficeBearersPage() {
   return (
     <>

@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import CarouselSmall from "@/utils/carouselSmall";
+import { Button } from "../components/ui/button";
+import CarouselSmall from "../utils/carouselSmall";
 // import CarouselSmall from "@/utils/carouselSmall";
 export default function FeatureSection() {
   return (

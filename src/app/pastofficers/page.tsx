@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import { ColumnDef } from "@tanstack/react-table";
-import { DataTable } from "@/utils/data-table";
-import PageLayout from "@/utils/Pagelayout";
+import { DataTable } from "../../utils/data-table";
+import PageLayout from "../../utils/Pagelayout";
 
 type PastOfficial = {
   year: number;

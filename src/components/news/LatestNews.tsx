@@ -167,9 +167,9 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 // import newsData from "@/data/news.json";
-import { Input } from "@/components/ui/input";
+import { Input } from "../../components/ui/input";
 // import { Button } from "@/components/ui/button";
-import { Pagination } from "@/utils/Pagination";
+import { Pagination } from "../../utils/Pagination";
 
 type NewsItem = {
   id: number;
