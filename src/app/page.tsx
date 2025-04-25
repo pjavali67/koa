@@ -22,6 +22,9 @@ export default function Home() {
       <section className=" bg-light-300 ">
         <OurMessage />
       </section>
+      <object data="/assets/KOA-Bylaws.pdf"  className="aspect-[9/16]" width="100%" height="200px" type="application/pdf">
+  <p>Your browser doesn’t support PDFs. Please download the PDF to view it: <a href="/your-pdf-url.pdf">Download PDF</a>.</p>
+</object>
     </main>
   );
 }

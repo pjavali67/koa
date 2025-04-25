@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import dynamic from "next/dynamic";
-const PdfViewer = dynamic(() => import("@/utils/PdfViewer"), {
-  ssr: false,
-});
+// import dynamic from "next/dynamic";
+// const PdfViewer = dynamic(() => import("@/utils/PdfViewer"), {
+//   ssr: false,
+// });
 
 export default function KoaBulletinPage() {
   return (
@@ -58,9 +58,10 @@ export default function KoaBulletinPage() {
             id="tabs-basic-1"
             role="tabpanel"
             aria-labelledby="tabs-basic-item-1"
-            className="bg-gray-200"
+            className="bg-gray-200 w-full h-screen"
           >
-            <PdfViewer fileUrl="/assets/2023.pdf" />
+            {/* <PdfViewer fileUrl="/assets/2023.pdf" /> */}
+            <embed src="/assets/2023.pdf" width="100%" height="600px" type="application/pdf" />
           </div>
           <div
             id="tabs-basic-2"
