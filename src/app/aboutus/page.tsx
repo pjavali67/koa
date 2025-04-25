@@ -1,7 +1,7 @@
 import React from "react";
 import PageLayout from "./layout";
-import AboutUsSection from "@/components/aboutus/aboutussection";
-import AboutUsIntro from "@/components/aboutus/aboutusIntro";
+import AboutUsSection from "./aboutussection";
+import AboutUsIntro from "./aboutusIntro";
 function Aboutus() {
   return (
     <>

@@ -5,98 +5,98 @@ import { DataTable } from "@/utils/data-table";
 import PageLayout from "@/utils/Pagelayout";
 
 type DistictChaptersProps = {
-  Name: string;
-  President: string;
-  PhoneNumber: string;
-  Secretary: string;
-  PhoneSecretary: string;
+  name: string;
+  pastPresident: string;
+  phoneNumber: string;
+   pastSecretary: string;
+   phoneSecretary: string;
 };
 
 const data: DistictChaptersProps[] = [
   {
-    Name: "Bangalore",
-    President: "Dr. Ramesh Kulkarni",
-    PhoneNumber: "234135677858",
-    Secretary: "Smt. Anjali Desai",
-    PhoneSecretary: "8921287389",
+    name: "Bangalore",
+    pastPresident: "Dr. Ramesh Kulkarni",
+    phoneNumber: "234135677858",
+     pastSecretary: "Smt. Anjali Desai",
+     phoneSecretary: "8921287389",
   },
   {
-    Name: "shivmoga",
-    President: "Shri. Mohan Rao",
-    PhoneNumber: "8743478932",
-    Secretary: "Smt. Kavita Shetty",
-    PhoneSecretary: "78237829834",
+    name: "shivmoga",
+    pastPresident: "Shri. Mohan Rao",
+    phoneNumber: "8743478932",
+     pastSecretary: "Smt. Kavita Shetty",
+     phoneSecretary: "78237829834",
   },
   {
-    Name: "chennai",
-    President: "Dr. Priya Nair",
-    PhoneNumber: "3212516772",
-    Secretary: "Shri. Rajesh Menon",
-    PhoneSecretary: "732473784",
+    name: "chennai",
+    pastPresident: "Dr. Priya Nair",
+    phoneNumber: "3212516772",
+     pastSecretary: "Shri. Rajesh Menon",
+     phoneSecretary: "732473784",
   },
   {
-    Name: "Mangalore",
-    President: "Dr. Ramesh Kulkarni",
-    PhoneNumber: "4341566267",
-    Secretary: "Smt. Anjali Desai",
-    PhoneSecretary: "8921287389",
+    name: "Mangalore",
+    pastPresident: "Dr. Ramesh Kulkarni",
+    phoneNumber: "4341566267",
+     pastSecretary: "Smt. Anjali Desai",
+     phoneSecretary: "8921287389",
   },
   {
-    Name: "Bellary",
-    President: "Shri. Mohan Rao",
-    PhoneNumber: "2243252515",
-    Secretary: "Smt. Kavita Shetty",
-    PhoneSecretary: "78237829834",
+    name: "Bellary",
+    pastPresident: "Shri. Mohan Rao",
+    phoneNumber: "2243252515",
+     pastSecretary: "Smt. Kavita Shetty",
+     phoneSecretary: "78237829834",
   },
   {
-    Name: " Hassan",
-    President: "Dr. Priya Nair",
-    PhoneNumber: "634683728423",
-    Secretary: "Shri. Rajesh Menon",
-    PhoneSecretary: "732473784",
+    name: " Hassan",
+    pastPresident: "Dr. Priya Nair",
+    phoneNumber: "634683728423",
+     pastSecretary: "Shri. Rajesh Menon",
+     phoneSecretary: "732473784",
   },
   {
-    Name: "Mysore",
-    President: "Dr. Ramesh Kulkarni",
-    PhoneNumber: "87147437487",
-    Secretary: "Smt. Anjali Desai",
-    PhoneSecretary: "8921287389",
+    name: "Mysore",
+    pastPresident: "Dr. Ramesh Kulkarni",
+    phoneNumber: "87147437487",
+     pastSecretary: "Smt. Anjali Desai",
+     phoneSecretary: "8921287389",
   },
   {
-    Name: "Chikkamagalore",
-    President: "Shri. Mohan Rao",
-    PhoneNumber: "7278432473",
-    Secretary: "Smt. Kavita Shetty",
-    PhoneSecretary: "78237829834",
+    name: "Chikkamagalore",
+    pastPresident: "Shri. Mohan Rao",
+    phoneNumber: "7278432473",
+     pastSecretary: "Smt. Kavita Shetty",
+     phoneSecretary: "78237829834",
   },
   {
-    Name: "Chitradurga",
-    President: "Dr. Priya Nair",
-    PhoneNumber: "287342347023",
-    Secretary: "Shri. Rajesh Menon",
-    PhoneSecretary: "732473784",
+    name: "Chitradurga",
+    pastPresident: "Dr. Priya Nair",
+    phoneNumber: "287342347023",
+     pastSecretary: "Shri. Rajesh Menon",
+     phoneSecretary: "732473784",
   },
 ];
 
-export const columns: ColumnDef<DistictChaptersProps>[] = [
+export const columns: ColumnDef<DistictChaptersProps>[]= [
   {
-    accessorKey: "Name",
+    accessorKey: "name",
     header: "Name",
   },
   {
-    accessorKey: "President",
-    header: "Presidents",
+    accessorKey: "pastPresident",
+    header: "PastPresidents",
   },
   {
-    accessorKey: "PhoneNumber",
+    accessorKey: "phoneNumber",
     header: "Phone Number",
   },
   {
-    accessorKey: "Secretary",
-    header: "Secretary",
+    accessorKey: " pastSecretary",
+    header: " pastSecretary",
   },
   {
-    accessorKey: "PhoneSecretary",
+    accessorKey: " phoneSecretary",
     header: "Phone Number",
   },
 ];
@@ -104,14 +104,14 @@ export const columns: ColumnDef<DistictChaptersProps>[] = [
 export default function DistrictChapterPage() {
   return (
     <>
-      <div className="mt-2">
+      <div classname="mt-2">
         <PageLayout
           title="District Chapters"
           description="District Chapters of the organization"
         />
       </div>
-      <div className="p-6 m-20">
-        <h1 className="text-2xl font-semibold mb-4">District Chapters</h1>
+      <div classname="p-6 m-20">
+        <h1 classname="text-2xl font-semibold mb-4">District Chapters</h1>
         <DataTable columns={columns} data={data} />
       </div>
     </>
