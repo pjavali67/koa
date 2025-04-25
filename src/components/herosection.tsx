@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { Audio } from "react-loader-spinner";
+
 type HerosectionImages = {
   id: string;
   url: string;
@@ -11,29 +11,16 @@ type HerosectionImages = {
 
 function Herosection() {
   const [images, setImages] = useState<HerosectionImages[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  
   useEffect(() => {
     fetch("/data/heroCarousel.json")
       .then((res) => res.json())
       .then((data) => setImages(data));
-    setIsLoading(true);
+  
   }, [images]);
 
   return (
     <>
-      {!isLoading ? (
-        <div className="h-screen w-full flex justify-center items-center">
-          <Audio
-            height="80"
-            width="80"
-            color="#4fa94d"
-            ariaLabel="three-dots-loading"
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-          />
-        </div>
-      ) : (
         <div
           id="image"
           data-carousel='{ "loadingclassNamees": "opacity-0" }'
@@ -71,7 +58,7 @@ function Herosection() {
             </button>
           </div>
         </div>
-      )}
+   
     </>
   );
 }

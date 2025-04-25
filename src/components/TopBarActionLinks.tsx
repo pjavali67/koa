@@ -48,7 +48,7 @@ function TopBarActionLinks() {
           />
           <span> +91 9880765855</span>
 
-          <span className="flex text-md ml-5">
+          <span className="flex text-m3">
             {" "}
             <Icon
               icon="mdi:email"
