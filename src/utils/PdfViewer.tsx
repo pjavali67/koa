@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { getDocument, PDFDocumentProxy, GlobalWorkerOptions } from "pdfjs-dist";
+import {pdfjs} from "react-pdf"
 import {
   ChevronLeft,
   ChevronRight,
@@ -10,8 +11,9 @@ import {
   Printer,
   Download,
 } from "lucide-react";
+import workerSrc from 'pdfjs-dist/build/pdf.worker.entry';
+GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.mjs`;
 
-GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@5.1.91/build/pdf.worker.min.mjs`;
 interface PdfViewerProps {
   fileUrl: string;
 }
