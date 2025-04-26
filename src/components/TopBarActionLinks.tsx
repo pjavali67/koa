@@ -60,7 +60,7 @@ function TopBarActionLinks() {
       </div>
       <div className="flex-1">
         <span className="flex  items-center justify-center flex-row gap-4 xl:flex-row lg:flex-row md:flex-row sm:flex-col xs:flex-col ">
-          <Link className="btn btn-primary bg-indigo-900 border-none " href="#">
+          <Link className="btn btn-primary bg-indigo-900 border-none  " href="/finddoctor" >
             Find A Orthopaedician
             <span>
               <Icon

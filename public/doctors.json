@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Dr. John Smith",
+    "address": "123 Health St",
+    "city": "Springfield",
+    "district": "Downtown",
+    "state": "IL",
+    "subSpecialisation": "Cardiology",
+    "email": "john.smith@example.com",
+    "phone": "(555) 123-4567",
+    "photo": "/images/doctors/john_smith.jpg"
+  },
+  {
+    "name": "Dr. Jane Doe",
+    "address": "456 Wellness Ave",
+    "city": "Springfield",
+    "district": "Uptown",
+    "state": "IL",
+    "subSpecialisation": "Neurology",
+    "email": "jane.doe@example.com",
+    "phone": "(555) 987-6543",
+    "photo": "/images/doctors/jane_doe.jpg"
+  },
+  {
+    "name": "Dr. Emily Johnson",
+    "address": "789 Care Blvd",
+    "city": "Springfield",
+    "district": "Eastside",
+    "state": "IL",
+    "subSpecialisation": "Orthopedics",
+    "email": "emily.johnson@example.com",
+    "phone": "(555) 555-1212",
+    "photo": "/images/doctors/emily_johnson.jpg"
+  },
+  {
+    "name": "Dr. Michael Brown",
+    "address": "321 Healing Way",
+    "city": "Springfield",
+    "district": "Westside",
+    "state": "IL",
+    "subSpecialisation": "Dermatology",
+    "email": "michael.brown@example.com",
+    "phone": "(555) 222-3333",
+    "photo": "/images/doctors/michael_brown.jpg"
+  },
+  {
+    "name": "Dr. Sarah Wilson",
+    "address": "654 Recovery Rd",
+    "city": "Springfield",
+    "district": "Southside",
+    "state": "IL",
+    "subSpecialisation": "General Medicine",
+    "email": "sarah.wilson@example.com",
+    "phone": "(555) 444-5555",
+    "photo": "/images/doctors/sarah_wilson.jpg"
+  }
+]

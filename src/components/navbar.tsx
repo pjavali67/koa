@@ -335,7 +335,7 @@ function Navbar() {
               <Link className="btn btn-primary" href={"#"}>
                 Join KOA
               </Link>
-              <Link className="btn btn-primary" href={"#"}>
+              <Link className="btn btn-primary" href={"/login"}>
                 Login
               </Link>
             </div>
