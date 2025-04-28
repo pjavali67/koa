@@ -82,7 +82,7 @@ function Navbar() {
                       <Link href={"/pastofficers"}>Past Officiers</Link>
                     </li>
                     <li>
-                      <Link href={"/bylaws"}>KOA Bylaws & Blue Book</Link>
+                      <Link href={"/bylaws-bluebook"}>KOA Bylaws & Blue Book</Link>
                     </li>
                     <li>
                       <Link href={"/koabulletin"}>KOA Bulletin</Link>
