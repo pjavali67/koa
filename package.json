@@ -37,8 +37,6 @@
     "nouislider": "^15.8.1",
     "pdfjs-dist": "^5.2.133",
     "react": "^19.0.0",
-    "react-date-picker": "^11.0.0",
-    "react-datepicker": "^8.3.0",
     "react-day-picker": "^8.10.1",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.56.1",
