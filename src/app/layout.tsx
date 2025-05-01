@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import FlyonuiScript from "../components/FlyonuiScript";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
+//import Navbar from "../components/navbar";
+//import Footer from "../components/footer";
+import NavigationBar from "../components/custom-components/NavigationBar";
+import TopBarActionLinks from "../components/TopBarActionLinks";
+import FooterComponent from "../components/custom-components/footer/FooterComponet";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,13 +34,20 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased  `}
       >
-        <div className="w-full h-screen flex flex-col justify-between">
+        <div className="w-full h-screen flex flex-col justify-between min-h-screen">
           <header>
-            <Navbar />
+            <nav>
+              <div className="bg-cyan-600 w-100%  ">
+                <TopBarActionLinks />
+              </div>
+            </nav>
+            {/* <Navbar /> */}
+            <NavigationBar />
           </header>
           <main>{children}</main>
           <footer>
-            <Footer />
+            {/* <Footer /> */}
+            <FooterComponent />
           </footer>
         </div>
 

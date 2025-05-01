@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Discover Amazing Products",
+    "description": "Explore our wide range of high-quality products designed to meet your needs.",
+    "image": "images/image2.jpg",
+    "ctaText": "Shop Now",
+    "ctaLink": "#"
+  },
+  {
+    "id": 2,
+    "title": "Summer Sale 50% Off",
+    "description": "Don't miss our biggest sale of the year. Limited time offer!jshgssdgsdgsdagsad",
+    "image": "images/image1.jpg",
+    "ctaText": "Get Discount",
+    "ctaLink": "#"
+  },
+  {
+    "id": 3,
+    "title": "New Collection Arrived",
+    "description": "Check out our latest collection featuring the newest trends.",
+    "image": "images/image2.jpg",
+    "ctaText": "View Collection",
+    "ctaLink": "#"
+  },
+  {
+    "id": 4,
+    "title": "Free Shipping Worldwide",
+    "description": "Enjoy free shipping on all orders over $50.",
+    "image": "images/image3.jpg",
+    "ctaText": "Learn More",
+    "ctaLink": "#"
+  },
+  {
+    "id": 5,
+    "title": "Join Our Community",
+    "description": "Become part of our growing community and get exclusive benefits.",
+    "image": "images/image4.jpg",
+    "ctaText": "Sign Up",
+    "ctaLink": "#"
+  },
+  {
+    "id": 6,
+    "title": "Hai Praveen",
+    "description": "Become part of our growing community and get exclusive benefits.",
+    "image":"images/image5.jpg",
+    "ctaText": "Sign Up",
+    "ctaLink": "#"
+  }
+]

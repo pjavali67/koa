@@ -115,7 +115,7 @@ function Navbar() {
                     aria-labelledby="nested-dropdown"
                   >
                     <li>
-                      <Link href={"/academiccalendar"}>Acadamic Calendar</Link>
+                      <Link href={"/step"}>Acadamic Calendar</Link>
                     </li>
                     <li>
                       <Link href={"/fellowship"}>Fellowship</Link>

@@ -16,9 +16,9 @@ function TopBarActionLinks() {
   }
 
   return (
-    <div className="topbar-action-links flex flex-row gap-4 justify-center items-center w-full h-[10%] text-white font-bold  ">
+    <div className="topbar-action-links mb-1  flex flex-row gap-4 justify-center items-center w-full h-[10%] font-bold   shadow-xl stroke-current" >
       <div>
-        <div className="flex flex-row gap-2 items-center justify-start ml-10 bg-white w-full rounded-md h-auto  shadow-md">
+        <div className="flex flex-row gap-2 items-center justify-start ml-10 bg-white w-full rounded-md h-auto  shadow-xl">
           <span className="flex  items-center justify-start gap-2 bg-light-50">
             <Image
               src="/images/KOA_logo.png"

@@ -1,0 +1,66 @@
+{
+  "description": {
+    "heading": "Karnataka Orthopaedic Association",
+    "text": "This community has been established specially for the members of the Karnataka Orthopaedic Association. The mission is to foster a high-quality forum for academic discussions underlining the Presidential theme 'Collaborate – Share – Support'."
+  },
+  "sections": [
+    {
+      "title": "Association",
+      "items": [
+        {
+          "name": "About Us",
+          "href": "/about"
+        },
+        {
+          "name": "Academics",
+          "href": "/academics"
+        },
+        {
+          "name": "KOA Bulletin",
+          "href": "/bulletin"
+        }
+      ]
+    },
+    {
+      "title": "Connect",
+      "items": [
+        {
+          "name": "Contact Us",
+          "href": "/contact"
+        },
+        {
+          "name": "Find An Orthopaedician",
+          "href": "/find-doctor"
+        },
+        {
+          "name": "Facebook",
+          "href": "https://facebook.com"
+        },
+        {
+          "name": "YouTube",
+          "href": "https://youtube.com"
+        }
+      ]
+    },
+    {
+      "title": "Member Stats",
+      "items": [
+        {
+          "name": "Life Members: 2059+",
+          "href": "/members"
+        },
+        {
+          "name": "Non Members: 25+",
+          "href": "/membership"
+        }
+      ]
+    }
+  ],
+  "copyright": {
+    "text": "Copyright © 2025 Karnataka Orthopaedic Association. All rights reserved.",
+    "poweredBy": {
+      "text": "Powered and developed by ARTYZONE",
+      "href": "https://artzone.com"
+    }
+  }
+}
