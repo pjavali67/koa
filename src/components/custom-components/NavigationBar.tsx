@@ -41,7 +41,7 @@ export default function NavigationBar() {
 
     { name: "News", href: "/news" },
     { name: "Events", href: "/events" },
-    { name: "Blog", href: "/sblog" },
+    { name: "Blog", href: "/blog" },
     
    
   ];
