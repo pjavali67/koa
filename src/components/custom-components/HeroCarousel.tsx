@@ -16,7 +16,7 @@ interface HeroCarouselProps {
   className?: string;
 }
 
-export default function HeroCarousel({ height = "h-[500px] md:h-[600px] lg:h-[700px]", className = "" }: HeroCarouselProps) {
+export default function HeroCarousel({ height = " h-[9/10]  md:h-[600px] lg:h-[700px]", className = "" }: HeroCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [autoSlide, setAutoSlide] = useState(true);
   const autoSlideInterval = 5000;
@@ -42,7 +42,7 @@ export default function HeroCarousel({ height = "h-[500px] md:h-[600px] lg:h-[70
   }, [currentIndex, autoSlide]);
 
   return (
-    <div className={`relative w-full h-screen overflow-hidden ${className}`}>
+    <div className={`relative w-full ${height} overflow-hidden ${className}`}>
       <Carousel
         opts={{
           startIndex: currentIndex,
@@ -52,9 +52,9 @@ export default function HeroCarousel({ height = "h-[500px] md:h-[600px] lg:h-[70
       >
         <CarouselContent className="h-full">
           {slidesData.map((slide) => (
-            <CarouselItem key={slide.id} className="h-full">
+            <CarouselItem key={slide.id} className={`${height}`}>
               <div
-                className={`relative w-full h-full bg-cover bg-center`}
+                className={`relative w-ful ${height} bg-cover bg-center`}
                 style={{ backgroundImage: `url(${slide.image})` }}
               >
                 <div className="absolute inset-0 bg-black/30"></div>
