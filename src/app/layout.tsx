@@ -34,7 +34,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased  `}
       >
-        <div className="w-full h-screen flex flex-col justify-between min-h-screen">
+        <div className="w-full h-screen  min-h-screen">
           <header>
             <nav>
               <div className="bg-cyan-600 w-100%  ">

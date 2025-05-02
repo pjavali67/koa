@@ -58,7 +58,7 @@ export default function HeroCarousel({ height = "h-[500px] md:h-[600px] lg:h-[70
                 style={{ backgroundImage: `url(${slide.image})` }}
               >
                 <div className="absolute inset-0 bg-black/30"></div>
-                <div className={`relative h-[600] flex flex-col justify-center items-center text-center text-white px-4 sm:px-6 lg:px-8`}>
+                <div className={`relative h-[650] flex flex-col justify-center items-center text-center text-white px-4 sm:px-6 lg:px-8`}>
                   <div className="max-w-3xl mx-auto">
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
                       {slide.title}

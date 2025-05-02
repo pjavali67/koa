@@ -5,7 +5,7 @@ export default function FeatureSection() {
   return (
     <>
       <div className="overflow-hidden bg-white py-1 ">
-        <div className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400  text-transparent bg-clip-text bg-transparent  mt-10 mb-5 ml-20 text-5xl font-semibold tracking-tight text-pretty ">
+        <div className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400  text-transparent bg-clip-text bg-transparent  mb-3 ml-20 text-5xl font-semibold tracking-tight text-pretty ">
           Welcome to Karnataka Orthopaedic Association
         </div>
         <div className="mx-auto max-w-7xl px-6 lg:px-4">

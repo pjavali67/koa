@@ -10,13 +10,13 @@ import OurMessage from "../components/OurMessage";
 //import SimpleCarousel from "@/components/ui/SimpleCarousel";
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen md:min-h-full">
       <div className="mt-2">
         {/* <Herosection /> */}
         <HeroCarousel />
       </div>
 
-      <section className="bg-light-100 mt-8  relative   top-[-2] ">
+      <section className="bg-light-100   ">
         <FeatureSection />
       </section>
       <section className="mt-5 bg-purple-200 ">
