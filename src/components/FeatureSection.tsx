@@ -1,6 +1,10 @@
 import { Button } from "../components/ui/button";
-import CarouselSmall from "../utils/carouselSmall";
+// import CarouselSmall from "../utils/carouselSmall";
+//import HeroCarousel from "./custom-components/HeroCarousel";
 // import CarouselSmall from "@/utils/carouselSmall";
+import SmallCarousel from "./custom-components/SmallCarusel";
+
+
 export default function FeatureSection() {
   return (
     <>
@@ -36,7 +40,7 @@ export default function FeatureSection() {
               className="relative w-full mt-30  aspect-[16/9]"
             >
               <>
-                <CarouselSmall />
+                <SmallCarousel />
               </>
               <div className="bg-indigo-200 w-full h-20 mt-6">
                 <span className="text-2xl font-bold text-center pt-4 pl-2">

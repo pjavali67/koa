@@ -16,7 +16,7 @@ interface HeroCarouselProps {
   className?: string;
 }
 
-export default function HeroCarousel({ height = "h-[500px] md:h-[600px] lg:h-[700px]", className = "" }: HeroCarouselProps) {
+export default function SmallCarousel({ height = "h-[175px] md:h-[200px] lg:h-[250px]", className = "" }: HeroCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [autoSlide, setAutoSlide] = useState(true);
   const autoSlideInterval = 5000;
@@ -42,7 +42,7 @@ export default function HeroCarousel({ height = "h-[500px] md:h-[600px] lg:h-[70
   }, [currentIndex, autoSlide]);
 
   return (
-    <div className={`relative w-full h-screen overflow-hidden ${className}`}>
+    <div className={`relative w-full ${height} overflow-hidden ${className}`}>
       <Carousel
         opts={{
           startIndex: currentIndex,
@@ -54,16 +54,16 @@ export default function HeroCarousel({ height = "h-[500px] md:h-[600px] lg:h-[70
           {slidesData.map((slide) => (
             <CarouselItem key={slide.id} className="h-full">
               <div
-                className={`relative w-full h-full bg-cover bg-center`}
+                className={`relative  bg-cover bg-center`}
                 style={{ backgroundImage: `url(${slide.image})` }}
               >
                 <div className="absolute inset-0 bg-black/30"></div>
-                <div className={`relative h-[650] flex flex-col justify-center items-center text-center text-white px-4 sm:px-6 lg:px-8`}>
+                <div className={`relative aspect-[16/9] flex flex-col justify-center items-center text-center text-white px-4 sm:px-6 lg:px-8`}>
                   <div className="max-w-3xl mx-auto">
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
+                    <h1 className="text-xl sm:text-3xl lg:text-4xl font-bold mb-4">
                       {slide.title}
                     </h1>
-                    <p className="text-lg sm:text-xl lg:text-2xl mb-8">
+                    <p className="text-sm sm:text-sm lg:text-xl mb-8">
                       {slide.description}
                     </p>
                     <Button
