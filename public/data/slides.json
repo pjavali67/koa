@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "title": "Discover Amazing Products",
-    "description": "Explore our wide range of high-quality products designed to meet your needs.",
+    "title": "Discover Amazing KOA",
+    "description": "Explore our Portal designed to meet your needs.",
     "image": "images/image2.jpg",
     "ctaText": "Shop Now",
     "ctaLink": "#"
@@ -10,25 +10,25 @@
   {
     "id": 2,
     "title": "Summer Sale 50% Off",
-    "description": "Don't miss our biggest sale of the year. Limited time offer!jshgssdgsdgsdagsad",
+    "description": "Join KOA Membership",
     "image": "images/image1.jpg",
-    "ctaText": "Get Discount",
+    "ctaText": "Life time Membership",
     "ctaLink": "#"
   },
   {
     "id": 3,
-    "title": "New Collection Arrived",
-    "description": "Check out our latest collection featuring the newest trends.",
+    "title": "New Look and Feel",
+    "description": "Check out our activities as well.",
     "image": "images/image2.jpg",
-    "ctaText": "View Collection",
+    "ctaText": "View News and Events",
     "ctaLink": "#"
   },
   {
     "id": 4,
-    "title": "Free Shipping Worldwide",
+    "title": "New Features Available",
     "description": "Enjoy free shipping on all orders over $50.",
     "image": "images/image3.jpg",
-    "ctaText": "Learn More",
+    "ctaText": "Find a Doctor with his Profile now",
     "ctaLink": "#"
   },
   {
@@ -36,14 +36,6 @@
     "title": "Join Our Community",
     "description": "Become part of our growing community and get exclusive benefits.",
     "image": "images/image4.jpg",
-    "ctaText": "Sign Up",
-    "ctaLink": "#"
-  },
-  {
-    "id": 6,
-    "title": "Hai Praveen",
-    "description": "Become part of our growing community and get exclusive benefits.",
-    "image":"images/image5.jpg",
     "ctaText": "Sign Up",
     "ctaLink": "#"
   }
