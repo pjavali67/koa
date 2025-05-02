@@ -1,7 +1,9 @@
-import React from "react";
-
-function ContactUsPage() {
-  return <div>ContactUsPage</div>;
+import React from 'react'
+import Contactus from './Contactus'
+function page() {
+  return (
+    <div className='ml-25 mr-25 mb-10'><Contactus /></div>
+  )
 }
 
-export default ContactUsPage;
+export default page

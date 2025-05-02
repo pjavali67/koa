@@ -9,7 +9,7 @@
       "items": [
         {
           "name": "About Us",
-          "href": "/about"
+          "href": "/aboutus"
         },
         {
           "name": "Academics",
@@ -17,7 +17,7 @@
         },
         {
           "name": "KOA Bulletin",
-          "href": "/bulletin"
+          "href": "//koabulletin"
         }
       ]
     },
@@ -26,19 +26,19 @@
       "items": [
         {
           "name": "Contact Us",
-          "href": "/contact"
+          "href": "/contactus"
         },
         {
           "name": "Find An Orthopaedician",
-          "href": "/find-doctor"
+          "href": "/finddoctor"
         },
         {
           "name": "Facebook",
-          "href": "https://facebook.com"
+          "href": "https://www.facebook.com/groups/2952203365056169/"
         },
         {
           "name": "YouTube",
-          "href": "https://youtube.com"
+          "href": "https://www.youtube.com/channel/UCJgvDfSVZ09miYAEmUIzfxQ"
         }
       ]
     },
@@ -47,7 +47,7 @@
       "items": [
         {
           "name": "Life Members: 2059+",
-          "href": "/members"
+          "href": "/membership"
         },
         {
           "name": "Non Members: 25+",
@@ -60,7 +60,7 @@
     "text": "Copyright © 2025 Karnataka Orthopaedic Association. All rights reserved.",
     "poweredBy": {
       "text": "Powered and developed by ARTYZONE",
-      "href": "https://artzone.com"
+      "href": "https://artzone.in"
     }
   }
 }
