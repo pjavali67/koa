@@ -1,4 +1,5 @@
-import { Button } from "../components/ui/button";
+import Link from "next/link";
+// import { Button } from "../components/ui/button";
 // import CarouselSmall from "../utils/carouselSmall";
 //import HeroCarousel from "./custom-components/HeroCarousel";
 // import CarouselSmall from "@/utils/carouselSmall";
@@ -29,7 +30,7 @@ export default function FeatureSection() {
                   meetings, conferences, articles and publications.
                 </p>
                 <div className="mt-5">
-                  <Button variant={"koaread"}> Read More </Button>
+                  <Link href={'/aboutus'} className="btn bg-purple-500 "> Read More </Link>
                 </div>
               </div>
             </div>
@@ -48,9 +49,10 @@ export default function FeatureSection() {
                 </span>
                 <div className="flex gap-2 text-xl text-gray-900 ml-2">
                   {" "}
-                  <span className="font-medium ">2024 | </span>
-                  <span className="font-medium ">2023 |</span>
-                  <span className="font-medium ">2022</span>
+                  <Link href={'/news'}
+                    className="font-medium "> 2024 | </Link>
+                  <Link href={'/news'} className="font-medium ">2023 |</Link>
+                  <Link href={'/news'} className="font-medium ">2022</Link>
                 </div>
               </div>
             </div>

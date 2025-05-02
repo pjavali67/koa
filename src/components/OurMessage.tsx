@@ -9,7 +9,8 @@
 // export default OurMessage;
 
 import Image from "next/image";
-import { Button } from "../components/ui/button";
+//import { Button } from "../components/ui/button";
+import Link from "next/link";
 
 export default function OurMessage() {
   return (
@@ -33,7 +34,7 @@ export default function OurMessage() {
                 meetings, conferences, articles and publications.
               </p>
               <div className="mt-5">
-                <Button variant="koaread"> Read More </Button>
+                <Link href="/ourmessage" className="btn bg-purple-500" > Read More </Link>
               </div>
             </div>
           </div>
