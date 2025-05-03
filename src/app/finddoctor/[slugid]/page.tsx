@@ -1,18 +1,8 @@
-// import React from 'react'
-
-// function ProfileOfDoctor({ params }: { params: {slugid: number } }) {
-//   const { slugid } = params
-//   console.log(slugid)
-//   return (
-//     <div>ProfileOfDoctor {slugid}</div>
-//   )
-// }
-
-// export default ProfileOfDoctor
 
 "use client";
 // import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 // import type { NextPage } from 'next';
 import { Doctor } from "../../../../types/doctor"
 
@@ -81,12 +71,14 @@ const ProfileOfDoctor= ({ params }: { params: { slugid: number } }) => {
 
         <div className="bg-white shadow rounded-lg overflow-hidden">
           <div className="sm:flex">
-            <div className="sm:w-1/3 p-6">
-              <img
+            <Image
                 className="w-full h-auto rounded-lg"
                 src={doctor.photo}
                 alt={`${doctor.name}'s profile`}
-              />
+              width={300}
+              height={300}
+            />
+
             </div>
             <div className="sm:w-2/3 p-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2">{doctor.name}</h1>
@@ -111,8 +103,7 @@ const ProfileOfDoctor= ({ params }: { params: { slugid: number } }) => {
                   <h2 className="text-lg font-semibold text-gray-900">About</h2>
                   <p className="text-gray-600">
                     Dr. {doctor.name.split(' ')[1]} is a board-certified {doctor.subSpecialization.toLowerCase()} specialist with years of experience in patient care.
-                  </p>
-                </div>
+                </p>
               </div>
             </div>
           </div>

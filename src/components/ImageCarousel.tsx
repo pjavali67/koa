@@ -135,7 +135,7 @@
 import { useState, useEffect, useCallback } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { cn } from "../lib/utils"
-
+import Image from "next/image"
 interface ImageCarouselProps {
   images: {
     src: string
@@ -227,7 +227,7 @@ export default function ImageCarousel({
                   : "translate-x-full opacity-0",
             )}
           >
-            <img src={image.src || "/placeholder.svg"} alt={image.alt} className="w-full h-full object-cover" />
+            <Image src={image.src || "/placeholder.svg"} alt={image.alt} className="w-full h-full object-cover" />
           </div>
         ))}
 

@@ -35,7 +35,7 @@ export default function PdfViewer({ fileUrl }: PdfViewerProps) {
     if (pdf) {
       renderPage(pageNumber);
     }
-  }, [pdf, pageNumber, scale]);
+  }, [pdf, pageNumber, scale,]);
 
   const renderPage = async (num: number) => {
     const page = await pdf!.getPage(num);

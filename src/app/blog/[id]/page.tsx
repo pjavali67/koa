@@ -2,6 +2,7 @@
 "use client";
 
 import React from 'react'
+import Image from 'next/image'
 
 const ProductPage = ({params}:{ params:{id:number}}) => {
 
@@ -25,12 +26,14 @@ const ProductPage = ({params}:{ params:{id:number}}) => {
         <h1 className="text-4xl font-bold mb-4">{blogPost.title}</h1>
         <p className="text-gray-600 text-sm mb-2">
           By {blogPost.author} on {blogPost.date}
-        </p>
-        <img
+          <Image
           src={blogPost.image}
           alt={blogPost.title}
-          className="w-100 h-64 object-cover rounded-md mb-6"
-        />
+            width={800}
+            height={256}
+            className="object-cover rounded-md mb-6"
+          />
+        </p>
         <div className="space-y-4 text-gray-800">
           {blogPost.content.map((paragraph, index) => (
             <p key={index} className="text-lg leading-relaxed">
