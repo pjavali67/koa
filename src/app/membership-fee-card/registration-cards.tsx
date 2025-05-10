@@ -37,6 +37,7 @@ const RegistrationCard = ({
   isOnline,
   downloadLink,
  }: RegistrationCardProps) => {
+
   return (
     <Card className="relative h-full flex flex-col">
       <div className="absolute top-[8] right-0 z-10">
@@ -50,13 +51,13 @@ const RegistrationCard = ({
       <CardFooter>
         {downloadLink ? (
           <Button asChild className="w-full bg-purple-500 hover:bg-purple-700">
-            <a href={downloadLink} download>
+            <a href={downloadLink} download {...(downloadLink?.startsWith('http://') || downloadLink?.startsWith('https://') ? { target: "_blank" } : {})}>
               {buttonText}
             </a>
           </Button>
         ) : (
           <Button asChild className="w-full bg-purple-500 hover:bg-purple-700">
-            <Link href={buttonLink}>
+              <Link href={buttonLink} target="_blank">
               {buttonText} <ExternalLink className="ml-2 h-4 w-4" />
             </Link>
           </Button>
@@ -71,17 +72,17 @@ export default function RegistrationCards() {
     <div className="container mx-auto py-8">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <RegistrationCard
-          title="Guest Registration"
+          title="KOA Guest Registration"
           description="This registration is for a professional from a non-orthopedic background, such as a company executive or HR manager, seeking to publish events and jobs on the website."
           buttonText="Click Here"
-          buttonLink="/guest-registration"
+          buttonLink="#"
           isOnline={true}
         />
         <RegistrationCard
           title="IOA Life Membership"
           description="To register online, please go to the link below."
           buttonText="Click Here"
-          buttonLink="/ioa-online-registration"
+          buttonLink="https://ioaindia.org/Webview/NewMember"
           isOnline={true}
         />
         <RegistrationCard
@@ -90,7 +91,7 @@ export default function RegistrationCards() {
           buttonText="Download"
           buttonLink="#"
           isOnline={false}
-          downloadLink="/path-to-your-pdf-file.pdf"
+          downloadLink="https://koaindia.org/wp-content/uploads/2022/09/IOA-Membership-Form.pdf"
         />
       </div>
     </div>
