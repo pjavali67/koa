@@ -8,7 +8,7 @@ function OfficeBearersPage() {
         <PageLayout title="Office Bearers" description="" />{" "}
       </div> */}
       <h1 className="text-xl font-bold mt-10 ml-5 mb-10">
-        KOA Office Berarers year wise{" "}
+        KOA Office Bearers year wise{" "}
       </h1>
       <div className=" ml-20 justify-center item-center relative w-full h-auto ">
         <nav
@@ -26,7 +26,7 @@ function OfficeBearersPage() {
             role="tab"
             aria-selected="true"
           >
-            Office Berarers 2024-2025
+            Office Bearers 2024-2025
           </button>
           <button
             type="button"
@@ -37,7 +37,7 @@ function OfficeBearersPage() {
             role="tab"
             aria-selected="false"
           >
-            Office Berarers 2024-2023
+            Office Bearers 2024-2023
           </button>
           <button
             type="button"

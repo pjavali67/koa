@@ -34,7 +34,7 @@ export default function NavigationBar() {
       href: "/academics",
       subLinks: [
         { name: "Academics Calendar", href: "#" },
-        { name: "FellowShip", href: "/fellowship" },
+        { name: "Fellowship", href: "/fellowship" },
         { name: "Books", href: "/books" },
       ],
     },
@@ -124,7 +124,7 @@ export default function NavigationBar() {
           </div>
           <div className="justify-center items-center  flex space-x-2 hidden md:flex">
               <Link  className="btn bg-purple-500 md:inline-flex" href="/login">Login</Link>
-              <Link  className="btn  md:inline-flex bg-purple-500" href="/membership">Join KOA</Link>
+            <Link className="btn  md:inline-flex bg-purple-500" href="/membership-fee-card">Join KOA</Link>
           </div>
          
         </div>

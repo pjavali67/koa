@@ -39,15 +39,18 @@ const BlogPage: React.FC = () => {
 
   return (
     <>
-      <div> <Link className='btn relative   bg-purple-500 h-20 m-5 text-xl text-white font-bold rounded-lg shadow-lg hover:bg-purple-700 transition duration-300 ease-in-out left-275' href="/postablog">
-        Post an Article
-      </Link></div>
-    <div className="container mx-auto p-4">
+
+      <div className="container mx-auto p-2">
+        <div className="flex justify-end mr-10">
+          <Link className='btn relative   bg-purple-500 h-20 m-5 text-xl text-white font-bold rounded-lg shadow-lg hover:bg-purple-700 transition duration-300 ease-in-out mr-10 inset-15 ' href="/postablog">
+            Post an Article
+          </Link>
+        </div>
       <h1 className="text-3xl font-bold mb-6">Blog</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {currentPosts.map((post) => (
           <div key={post.id} className="border rounded-lg shadow-md p-4">
-            <Image src={post.image} alt={post.title} className="w-full h-40 object-cover rounded-md mb-4" />
+            <Image src={post.image} alt={post.title} className="w-full h-40 object-cover rounded-md mb-4" height={150} width={275} />
             <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
             <p className="text-gray-600 text-sm mb-2">{post.description}</p>
             <p className="text-gray-500 text-xs mb-4">

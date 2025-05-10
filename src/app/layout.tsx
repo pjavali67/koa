@@ -37,7 +37,7 @@ export default function RootLayout({
         <div className="w-full h-screen  min-h-screen">
           <header>
             <nav>
-              <div className="bg-cyan-600 w-100%  ">
+              <div className="bg-cyan-600   ">
                 <TopBarActionLinks />
               </div>
             </nav>

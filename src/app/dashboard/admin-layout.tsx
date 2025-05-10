@@ -379,7 +379,7 @@ type SubItem = {
 const navItems: NavItem[] = [
   { name: "Dashboard", href: "/admin", icon: <LayoutDashboard size={16} /> },
   { name: "Member Details", href: "/admin/members", icon: <Users size={16} /> },
-  { name: "Blog", href: "/admin/blog", icon: <FileText size={16} /> },
+  { name: "Blog", href: "/dashboard/blogpost", icon: <FileText size={16} /> },
   { name: "News", href: "/admin/news", icon: <Newspaper size={16} /> },
   { name: "Carousel", href: "/admin/carousel", icon: <ImageIcon size={16} /> },
   {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { getDocument, PDFDocumentProxy, GlobalWorkerOptions } from "pdfjs-dist";
 
 import {
@@ -31,25 +31,25 @@ export default function PdfViewer({ fileUrl }: PdfViewerProps) {
     });
   }, [fileUrl]);
 
-  useEffect(() => {
+  const renderPage = useCallback(async (num: number) => {
     if (pdf) {
-      renderPage(pageNumber);
+      const page = await pdf.getPage(num);
+      const viewport = page.getViewport({ scale });
+      const canvas = canvasRef.current!;
+      const context = canvas.getContext("2d")!;
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
+
+      await page.render({
+        canvasContext: context,
+        viewport,
+      }).promise;
     }
-  }, [pdf, pageNumber, scale,]);
+  }, [pdf, scale]);
 
-  const renderPage = async (num: number) => {
-    const page = await pdf!.getPage(num);
-    const viewport = page.getViewport({ scale });
-    const canvas = canvasRef.current!;
-    const context = canvas.getContext("2d")!;
-    canvas.height = viewport.height;
-    canvas.width = viewport.width;
-
-    await page.render({
-      canvasContext: context,
-      viewport,
-    }).promise;
-  };
+  useEffect(() => {
+    renderPage(pageNumber);
+  }, [renderPage, pageNumber]);
 
   const printPdf = () => {
     const iframe = document.createElement("iframe");

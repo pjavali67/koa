@@ -1,0 +1,10 @@
+// .eslintrc.js
+// 
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    // Add custom rules or override defaults
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-img-element": "off"
+  }
+}
