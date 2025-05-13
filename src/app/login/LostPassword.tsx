@@ -4,10 +4,11 @@ import React, { useState } from "react";
 
 interface LostPasswordProps {
   onClose: () => void;
+  emailAddress?: string;
 }
 
-const LostPassword: React.FC<LostPasswordProps> = ({ onClose }) => {
-  const [email, setEmail] = useState("");
+const LostPassword: React.FC<LostPasswordProps> = ({ onClose, emailAddress }) => {
+  const [email, setEmail] = useState(emailAddress);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

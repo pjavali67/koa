@@ -75,7 +75,7 @@ export default function RegistrationCards() {
           title="KOA Guest Registration"
           description="This registration is for a professional from a non-orthopedic background, such as a company executive or HR manager, seeking to publish events and jobs on the website."
           buttonText="Click Here"
-          buttonLink="#"
+          buttonLink="/"
           isOnline={true}
         />
         <RegistrationCard
