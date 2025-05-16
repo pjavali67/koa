@@ -1,6 +1,10 @@
 import React from "react";
+import { requireAuth } from "../../lib/session"
 
-function Events() {
+async function Events() {
+  const session = await requireAuth() as { name?: string; email?: string }
+  console.log(session);
+
   return <div>Events Pages</div>;
 }
 

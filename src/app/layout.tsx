@@ -2,11 +2,14 @@ import type { Metadata } from "next";
 import FlyonuiScript from "../components/FlyonuiScript";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+//import { AuthProvider } from "../lib/auth-provider";
+import { Providers } from "./providers";
 //import Navbar from "../components/navbar";
 //import Footer from "../components/footer";
 import NavigationBar from "../components/custom-components/NavigationBar";
 import TopBarActionLinks from "../components/TopBarActionLinks";
 import FooterComponent from "../components/custom-components/footer/FooterComponet";
+import { SessionProvider } from "next-auth/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,9 +45,10 @@ export default function RootLayout({
               </div>
             </nav>
             {/* <Navbar /> */}
-            <NavigationBar />
+            <SessionProvider> <NavigationBar /></SessionProvider>
+            {/* <AuthProvider> <NavigationBar /></AuthProvider> */}
           </header>
-          <main>{children}</main>
+          <main> <Providers>{children}</Providers></main>
           <footer>
             {/* <Footer /> */}
             <FooterComponent />

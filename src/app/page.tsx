@@ -1,14 +1,11 @@
 import HeroCarousel from "../components/custom-components/HeroCarousel";
 import FeatureCard from "../components/FeatureCard";
 import FeatureSection from "../components/FeatureSection";
-
-//import { Hero } from "@/components/Hero";
-//import HeroCarousel from "@/components/HeroCarousel";
-//import Herosection from "../components/herosection";
 import OurMessage from "../components/OurMessage";
 
-//import SimpleCarousel from "@/components/ui/SimpleCarousel";
-export default function Home() {
+
+export default async function Home() {
+
   return (
     <main className="min-h-screen md:min-h-full">
       <div className="mt-2">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,8 +10,20 @@ import {
 import { Button } from "../../components/ui/button";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
+import { LogoutButton } from "../auth/logout-button";
 export default function NavigationBar() {
+  const [sessionOn, setSessionOn] = useState<ReturnType<typeof useSession>['data'] | null>(null);
+  const [statusOn, seStatusOn] = useState<"authenticated" | "unauthenticated" | "loading">("loading");
+  const { data: session, status } = useSession();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  console.log(statusOn)
+  useEffect(() => {
+    setSessionOn(session ?? null);
+    seStatusOn(status);
+  }, [session, status]);
+
+
 
   const navLinks = [
     {
@@ -123,14 +135,16 @@ export default function NavigationBar() {
             </Button>
           </div>
           <div className="justify-center items-center  flex space-x-2 hidden md:flex">
-              <Link  className="btn bg-purple-500 md:inline-flex" href="/login">Login</Link>
+            {sessionOn?.user?.name ? (
+              <span className="text-bold text-xl"> Welcome {sessionOn?.user?.name} </span>
+            ) : <Link className="btn bg-purple-500 md:inline-flex" href="/login">Login</Link>}
+
             <Link className="btn  md:inline-flex bg-purple-500" href="/membership-fee-card">Join KOA</Link>
+            {sessionOn?.user?.name ? <LogoutButton /> : null}
           </div>
-         
         </div>
       
       </div>
-     
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white dark:bg-gray-900 pb-3 px-4">

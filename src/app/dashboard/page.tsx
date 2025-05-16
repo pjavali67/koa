@@ -1,17 +1,26 @@
 import { AdminLayout } from "./admin-layout";
 import { Card, CardHeader, CardTitle, CardContent } from "../../components/ui/card";
-import { Activity, Users, FileText, Calendar } from "lucide-react";
-
-export default function AdminDashboard() {
+import { Activity, Users, FileText, Calendar, User } from "lucide-react";
+import { requireAuth } from "../../lib/session"
+import { LogoutButton } from "../../components/auth/logout-button"
+export default async function AdminDashboard() {
+  const session = await requireAuth() as { name?: string; email?: string }
   const stats = [
     { title: "Total Members", value: "1,254", icon: <Users className="h-6 w-6" /> },
     { title: "Active Events", value: "8", icon: <Calendar className="h-6 w-6" /> },
     { title: "Recent Posts", value: "24", icon: <FileText className="h-6 w-6" /> },
     { title: "Site Activity", value: "High", icon: <Activity className="h-6 w-6" /> },
   ];
-
+  console.log(session)
   return (
     <AdminLayout>
+      <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
+          <User className="h-5 w-5" />
+          <span>{(session.name as string) || (session.email as string)}</span>
+        </div>
+        <LogoutButton />
+      </div>
       <div className="space-y-6">
         <h1 className="text-2xl font-bold">Dashboard Overview</h1>
 

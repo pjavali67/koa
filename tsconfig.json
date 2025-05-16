@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./*"]
+    },
     "target": "ESNext",
     "module": "ESNext",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -32,11 +32,29 @@
     "src/app/jobs",
     "src/utils/ShowPdf.tsx"
   ],
-  "exclude": [
-    "node_modules",
-    ".next",
-    "dist",
-    "build",
-    "out"
-  ]
+  "exclude": ["node_modules", ".next", "dist", "build", "out"],
+  "lib": ["dom", "dom.iterable", "esnext"],
+  "allowJs": true,
+  "target": "ES6",
+  "skipLibCheck": true,
+  "strict": true,
+  "noEmit": true,
+  "esModuleInterop": true,
+  "module": "esnext",
+  "moduleResolution": "bundler",
+  "resolveJsonModule": true,
+  "isolatedModules": true,
+  "jsx": "preserve",
+  "incremental": true,
+  "plugins": [
+    {
+      "name": "next"
+    }
+  ],
+  "paths": {
+    "@/*": ["./*"]
+  }
+  //   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  //   "exclude": ["node_modules"]
+  // }
 }
