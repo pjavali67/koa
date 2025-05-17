@@ -10,6 +10,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Alert, AlertDescription } from "../../components/ui/alert"
 import { AlertCircle } from "lucide-react"
 import Link from "next/link"
+import { PasswordInput } from "../ui/password-input"
 
 export function LoginForm() {
   const router = useRouter()
@@ -52,8 +53,8 @@ export function LoginForm() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Login</CardTitle>
-        <CardDescription>Enter your email and password to access your account</CardDescription>
+        <CardTitle className="text-2xl font-extrabold">Login</CardTitle>
+        <CardDescription className="text-xl">Enter your email and password to access your account</CardDescription>
       </CardHeader>
       <CardContent>
         {error && (
@@ -64,7 +65,7 @@ export function LoginForm() {
         )}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <label htmlFor="email" className="text-sm font-medium">
+            <label htmlFor="email" className="text-xl font-bold">
               Email
             </label>
             <Input
@@ -77,24 +78,25 @@ export function LoginForm() {
             />
           </div>
           <div className="space-y-2">
-            <label htmlFor="password" className="text-sm font-medium">
+            <label htmlFor="password" className="text-xl font-bold">
               Password
             </label>
-            <Input
+            {/* <Input
               id="password"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••"
               required
-            />
+            /> */}
+            <PasswordInput id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
           </div>
           <div className="text-sm text-right">
             <Link href="/auth/forgot-password" className="text-primary hover:underline">
               Forgot password?
             </Link>
           </div>
-          <Button type="submit" className="w-full" disabled={isLoading}>
+          <Button type="submit" className="w-full bg-purple-500 hover:bg-purple-800" disabled={isLoading}>
             {isLoading ? "Logging in..." : "Login"}
           </Button>
         </form>

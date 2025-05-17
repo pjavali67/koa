@@ -23,7 +23,7 @@ export default function ResetPasswordPage({ params }: ResetPasswordPageProps) {
         const response = await fetch(`/api/auth/validate-reset-token?token=${token}`)
         const data = await response.json()
         setIsValid(data.valid)
-      } catch (error) {
+      } catch {
         setIsValid(false)
       } finally {
         setIsValidating(false)

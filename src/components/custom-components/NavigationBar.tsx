@@ -77,7 +77,7 @@ export default function NavigationBar() {
                 {link.subLinks ? (
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <Button variant="ghost" className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                      <Button variant="ghost" className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 text-lg">
                         {link.name}
                         <svg
                           className="w-4 h-4 ml-1"
@@ -100,7 +100,7 @@ export default function NavigationBar() {
                         <DropdownMenuItem key={subLink.name} asChild>
                           <Link
                             href={subLink.href}
-                            className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                            className=" text-lg font-medium block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
                           >
                             {subLink.name}
                           </Link>
@@ -111,7 +111,7 @@ export default function NavigationBar() {
                 ) : (
                   <Link
                     href={link.href}
-                    className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                      className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md s font-medium text-lg"
                   >
                     {link.name}
                   </Link>

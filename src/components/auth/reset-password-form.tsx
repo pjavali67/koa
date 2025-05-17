@@ -7,13 +7,14 @@ import * as z from "zod"
 import { useRouter } from "next/navigation"
 import { Button } from "../../components/ui/button"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../../components/ui/form"
-import { Input } from "../../components/ui/input"
+//import { Input } from "../../components/ui/input"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../../components/ui/card"
 import { Alert, AlertDescription } from "../../components/ui/alert"
 import { AlertCircle } from "lucide-react"
 import Link from "next/link"
 import { resetPassword } from "../../lib/auth-actions"
 import { useToast } from "../../hooks/use-toast"
+import { PasswordInput } from "../ui/password-input"
 
 const resetPasswordSchema = z
   .object({
@@ -72,12 +73,11 @@ export function ResetPasswordForm({ token }: ResetPasswordFormProps) {
       setIsLoading(false)
     }
   }
-
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Reset Password</CardTitle>
-        <CardDescription>Create a new password for your account</CardDescription>
+        <CardTitle className="text-2xl font-extrabold">Reset Password</CardTitle>
+        <CardDescription className="text-xl">Create a new password for your account</CardDescription>
       </CardHeader>
       <CardContent>
         {error && (
@@ -93,9 +93,10 @@ export function ResetPasswordForm({ token }: ResetPasswordFormProps) {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>New Password</FormLabel>
+                  <FormLabel className="text-xl font-bold">New Password</FormLabel>
                   <FormControl>
-                    <Input type="password" placeholder="••••••••" {...field} />
+                    <PasswordInput  {...field} />
+                    {/* <Input type="password" placeholder="••••••••" {...field} /> */}
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -106,15 +107,16 @@ export function ResetPasswordForm({ token }: ResetPasswordFormProps) {
               name="confirmPassword"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Confirm New Password</FormLabel>
+                  <FormLabel className="text-xl font-bold">Confirm New Password</FormLabel>
                   <FormControl>
-                    <Input type="password" placeholder="••••••••" {...field} />
+                    <PasswordInput  {...field} />
+                    {/* <Input type="password" placeholder="••••••••" {...field} /> */}
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button type="submit" className="w-full" disabled={isLoading}>
+            <Button type="submit" className="w-full text-xl bg-purple-500 hover:bg-purple-800" disabled={isLoading}>
               {isLoading ? "Resetting..." : "Reset Password"}
             </Button>
           </form>

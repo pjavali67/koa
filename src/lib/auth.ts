@@ -30,28 +30,31 @@ export const authOptions: NextAuthOptions = {
             return null
           }
 
-          const users = await sql`
-            SELECT * FROM users WHERE email = ${credentials.email}
-          `
+          const members = await sql`
+            SELECT * FROM members WHERE email = ${credentials.email}
+          `;
 
-          const user = users[0]
+          const member = members[0];
 
-          if (!user || !user.password) {
-            return null
+          if (!member || !member.password) {
+            return null;
           }
 
-          const passwordMatch = await compare(credentials.password, user.password)
+          const passwordMatch = await compare(
+            credentials.password,
+            member.password
+          );
     
           if (!passwordMatch) {
             return null
           }
 
           return {
-            id: String(user.id),
-            email: user.email,
-            name: user.name || null,
-            image: user.image || null,
-          }
+            id: String(member.id),
+            email: member.email,
+            name: member.name || null,
+            image: member.image || null,
+          };
         } catch (error) {
           console.error("Database error in authorize:", error)
           return null
@@ -60,21 +63,21 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
-    async jwt({ token, user }) {
-      if (user) {
-        token.id = user.id
-        token.email = user.email
-        token.name = user.name
-        token.picture = user.image
+    async jwt({ token, member }: { token: any; member?: { id: string; email: string; name?: string | null; image?: string | null } }) {
+      if (member) {
+        token.id = member.id
+        token.email = member.email
+        token.name = member.name
+        token.picture = member.image
       }
       return token
     },
     async session({ session, token }) {
-      if (token && session.user) {
-        session.user.id = token.id as string
-        session.user.email = token.email as string
-        session.user.name = (token.name as string) || null
-        session.user.image = (token.picture as string) || null
+      if (token && session.member) {
+        session.member.id = token.id as string
+        session.member.email = token.email as string
+        session.member.name = (token.name as string) || null
+        session.member.image = (token.picture as string) || null
       }
       return session
     },

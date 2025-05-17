@@ -3,7 +3,7 @@ import FlyonuiScript from "../components/FlyonuiScript";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 //import { AuthProvider } from "../lib/auth-provider";
-import { Providers } from "./providers";
+//import { Providers } from "./providers";
 //import Navbar from "../components/navbar";
 //import Footer from "../components/footer";
 import NavigationBar from "../components/custom-components/NavigationBar";
@@ -48,10 +48,10 @@ export default function RootLayout({
             <SessionProvider> <NavigationBar /></SessionProvider>
             {/* <AuthProvider> <NavigationBar /></AuthProvider> */}
           </header>
-          <main> <Providers>{children}</Providers></main>
+          <main>     <SessionProvider>{children}</SessionProvider></main>
           <footer>
             {/* <Footer /> */}
-            <FooterComponent />
+            <SessionProvider> <FooterComponent /> </SessionProvider>
           </footer>
         </div>
 

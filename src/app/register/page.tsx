@@ -10,7 +10,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Alert, AlertDescription } from "../../components/ui/alert"
 import { AlertCircle } from "lucide-react"
 import Link from "next/link"
-
+import { PasswordInput } from "../../components/ui/password-input"
 export default function RegisterPage() {
   const router = useRouter()
   const [name, setName] = useState("")
@@ -103,7 +103,7 @@ export default function RegisterPage() {
                 <label htmlFor="password" className="text-sm font-medium">
                   Password
                 </label>
-                <Input
+                {/* <Input
                   id="password"
                   type="password"
                   value={password}
@@ -111,20 +111,24 @@ export default function RegisterPage() {
                   placeholder="••••••••"
                   required
                   minLength={8}
-                />
+                /> */}
+                <PasswordInput id="password" value={password}
+                  onChange={(e) => setPassword(e.target.value)} required minLength={8} />
               </div>
               <div className="space-y-2">
                 <label htmlFor="confirmPassword" className="text-sm font-medium">
                   Confirm Password
                 </label>
-                <Input
+                {/* <Input
                   id="confirmPassword"
                   type="password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="••••••••"
                   required
-                />
+                /> */}
+                <PasswordInput id="confirmPassword" value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)} required />
               </div>
               <Button type="submit" className="w-full" disabled={isLoading}>
                 {isLoading ? "Creating account..." : "Register"}

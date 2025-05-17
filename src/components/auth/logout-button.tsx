@@ -8,6 +8,7 @@ export function LogoutButton() {
   const router = useRouter()
 
   const handleLogout = async () => {
+
     try {
       await fetch("/api/auth/logout", {
         method: "POST",
@@ -20,7 +21,7 @@ export function LogoutButton() {
   }
 
   return (
-    <Button variant="koaread" size="lg" onClick={handleLogout}>
+    <Button variant="outline" size="lg" onClick={handleLogout}>
       <LogOut className="h-4 w-4 mr-2" />
       Sign out
     </Button>

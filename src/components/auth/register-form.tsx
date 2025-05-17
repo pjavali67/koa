@@ -14,6 +14,7 @@ import { AlertCircle } from "lucide-react"
 import Link from "next/link"
 import { registerUser } from "../../lib/auth-actions"
 import { useToast } from "../../hooks/use-toast"
+import { PasswordInput } from "../ui/password-input"
 
 const registerSchema = z
   .object({
@@ -67,7 +68,7 @@ export function RegisterForm() {
       })
 
       router.push("/auth/login")
-    } catch (error) {
+    } catch {
       setError("An unexpected error occurred")
     } finally {
       setIsLoading(false)
@@ -77,7 +78,7 @@ export function RegisterForm() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Register</CardTitle>
+        <CardTitle className="text-2xl font-bold">Register</CardTitle>
         <CardDescription>Create a new account to get started</CardDescription>
       </CardHeader>
       <CardContent>
@@ -94,9 +95,9 @@ export function RegisterForm() {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel className="text-xl font-bold">Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="John Doe" {...field} />
+                    <Input placeholder="Praveen Javali" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -107,7 +108,7 @@ export function RegisterForm() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel className="text-xl font-bold">Email</FormLabel>
                   <FormControl>
                     <Input placeholder="you@example.com" {...field} />
                   </FormControl>
@@ -120,9 +121,10 @@ export function RegisterForm() {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password</FormLabel>
+                  <FormLabel className="text-xl font-bold">Password</FormLabel>
                   <FormControl>
-                    <Input type="password" placeholder="••••••••" {...field} />
+                    {/* <Input type="password" placeholder="••••••••" {...field} /> */}
+                    <PasswordInput  {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -133,15 +135,16 @@ export function RegisterForm() {
               name="confirmPassword"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Confirm Password</FormLabel>
+                  <FormLabel className="text-xl font-bold">Confirm Password</FormLabel>
                   <FormControl>
-                    <Input type="password" placeholder="••••••••" {...field} />
+                    {/* <Input type="password" placeholder="••••••••" {...field} /> */}
+                    <PasswordInput  {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button type="submit" className="w-full" disabled={isLoading}>
+            <Button type="submit" className="w-full bg-purple-500 hover:bg-purple-800" disabled={isLoading}>
               {isLoading ? "Creating account..." : "Register"}
             </Button>
           </form>

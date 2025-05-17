@@ -57,23 +57,27 @@ export async function POST(request: Request) {
       id: user.id,
       email: user.email,
       name: user.name,
-      role: "user",
+      role: "member",
     })
       .setProtectedHeader({ alg: "HS256" })
       .setJti(nanoid())
       .setIssuedAt()
       .setExpirationTime("24h")
-      .sign(new TextEncoder().encode(process.env.NEXTAUTH_SECRET || "fallback-secret"))
+      .sign(
+        new TextEncoder().encode(
+          process.env.NEXTAUTH_SECRET || "fallback-secret"
+        )
+      );
 
     // Set cookie
-    cookies().set({
+    (await cookies()).set({
       name: "session-token",
       value: token,
       httpOnly: true,
       path: "/",
       secure: process.env.NODE_ENV === "production",
       maxAge: 60 * 60 * 24, // 1 day
-    })
+    });
 
     return NextResponse.json({
       success: true,
