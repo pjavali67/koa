@@ -34,7 +34,7 @@ export async function registerUser({
   try {
     // Check if user already exists
     const existingUser = await sql`
-      SELECT * FROM members WHERE email = ${email}
+      SELECT * FROM member WHERE email = ${email}
     `.then((res) => res[0]);
 
     if (existingUser) {
@@ -46,7 +46,7 @@ export async function registerUser({
 
     // Create user
     await sql`
-      INSERT INTO members (name, email, password)
+      INSERT INTO member (name, email, password)
       VALUES (${name}, ${email}, ${hashedPassword})
     `;
 
@@ -63,7 +63,7 @@ export async function sendPasswordResetEmail(email: string) {
   try {
     // Check if user exists
     const member = await sql`
-      SELECT * FROM members WHERE email = ${email}
+      SELECT * FROM member WHERE email = ${email}
     `.then((res) => res[0]);
     console.log(member, ">>>>>>>", email);
 
@@ -208,7 +208,7 @@ export async function resetPassword({ token, password }: ResetPasswordParams) {
 
     // Update user password
     await sql`
-      UPDATE members SET password = ${hashedPassword}
+      UPDATE member SET password = ${hashedPassword}
       WHERE email = ${resetToken.email}
     `;
 

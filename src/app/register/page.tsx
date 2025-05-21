@@ -63,8 +63,8 @@ export default function RegisterPage() {
       <div className="w-full max-w-md">
         <Card>
           <CardHeader>
-            <CardTitle>Register</CardTitle>
-            <CardDescription>Create a new account to get started</CardDescription>
+            <CardTitle className={"text-2xl font-bold"}>Register</CardTitle>
+            <CardDescription className="text-xl">Create a new account to get started</CardDescription>
           </CardHeader>
           <CardContent>
             {error && (
@@ -75,19 +75,19 @@ export default function RegisterPage() {
             )}
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium">
+                <label htmlFor="name" className="text-xl font-bold">
                   Name
                 </label>
                 <Input
                   id="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="John Doe"
+                  placeholder="Your name"
                   required
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium">
+                <label htmlFor="email" className="text-xl font-bold">
                   Email
                 </label>
                 <Input
@@ -100,7 +100,7 @@ export default function RegisterPage() {
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="password" className="text-sm font-medium">
+                <label htmlFor="password" className="text-xl font-bold">
                   Password
                 </label>
                 {/* <Input
@@ -116,7 +116,7 @@ export default function RegisterPage() {
                   onChange={(e) => setPassword(e.target.value)} required minLength={8} />
               </div>
               <div className="space-y-2">
-                <label htmlFor="confirmPassword" className="text-sm font-medium">
+                <label htmlFor="confirmPassword" className="text-xl font-bold">
                   Confirm Password
                 </label>
                 {/* <Input
@@ -130,7 +130,7 @@ export default function RegisterPage() {
                 <PasswordInput id="confirmPassword" value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)} required />
               </div>
-              <Button type="submit" className="w-full" disabled={isLoading}>
+              <Button type="submit" className="w-full bg-purple-500 hover:bg-purple-800" disabled={isLoading}>
                 {isLoading ? "Creating account..." : "Register"}
               </Button>
             </form>

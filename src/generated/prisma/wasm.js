@@ -20,12 +20,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 6.7.0
- * Query Engine version: 3cff47a7f5d65c3ea74883f1d736e41d68ce91ed
+ * Prisma Client JS version: 6.8.2
+ * Query Engine version: 2060c79ba17c6bb9f5823312b6f6b7f4a845738e
  */
 Prisma.prismaVersion = {
-  client: "6.7.0",
-  engine: "3cff47a7f5d65c3ea74883f1d736e41d68ce91ed"
+  client: "6.8.2",
+  engine: "2060c79ba17c6bb9f5823312b6f6b7f4a845738e"
 }
 
 Prisma.PrismaClientKnownRequestError = () => {
@@ -120,7 +120,7 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
-exports.Prisma.MembersScalarFieldEnum = {
+exports.Prisma.MemberScalarFieldEnum = {
   id: 'id',
   email: 'email',
   mobile: 'mobile',
@@ -165,7 +165,8 @@ exports.Prisma.MembersScalarFieldEnum = {
   type: 'type',
   role_id: 'role_id',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  transationId: 'transationId'
 };
 
 exports.Prisma.MemberRoleScalarFieldEnum = {
@@ -188,6 +189,70 @@ exports.Prisma.PasswordResetTokenScalarFieldEnum = {
   createdAt: 'createdAt'
 };
 
+exports.Prisma.HeroCarouselScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  description: 'description',
+  image: 'image',
+  ctaText: 'ctaText',
+  ctaLink: 'ctaLink',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.SmallCarouselScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  description: 'description',
+  image: 'image',
+  ctaText: 'ctaText',
+  ctaLink: 'ctaLink',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.BlogScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  author: 'author',
+  date: 'date',
+  image: 'image',
+  content: 'content',
+  MemberId: 'MemberId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.ReviewScalarFieldEnum = {
+  id: 'id',
+  content: 'content',
+  rating: 'rating',
+  blogId: 'blogId',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.CommentScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  email: 'email',
+  comment: 'comment',
+  blogId: 'blogId',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.NewsScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  author: 'author',
+  date: 'date',
+  image: 'image',
+  description: 'description',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -205,10 +270,16 @@ exports.Prisma.NullsOrder = {
 
 
 exports.Prisma.ModelName = {
-  Members: 'Members',
+  Member: 'Member',
   MemberRole: 'MemberRole',
   VerificationToken: 'VerificationToken',
-  PasswordResetToken: 'PasswordResetToken'
+  PasswordResetToken: 'PasswordResetToken',
+  HeroCarousel: 'HeroCarousel',
+  SmallCarousel: 'SmallCarousel',
+  Blog: 'Blog',
+  Review: 'Review',
+  Comment: 'Comment',
+  News: 'News'
 };
 
 /**

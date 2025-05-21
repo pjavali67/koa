@@ -42,11 +42,8 @@ function TopBarActionLinks() {
       <div className="flex-1 w-auto bg-light-50"></div>
       <div className="flex-1">
         <span className="text-md flex items-center justify-center flex-row xl:flex-row lg:flex-row md:flex-row sm:flex-col xs:flex-col visibel hidden ">
-          <Icon
-            icon="mdi:phone"
-            className="text-white hover:text-black w-6 h-6 "
-          />
-          <span> +91 9880765855</span>
+
+
 
           <span className="flex text-m3">
             {" "}
@@ -60,7 +57,7 @@ function TopBarActionLinks() {
       </div>
       <div className="flex-1 mr-5">
         <span className="flex  items-center justify-center flex-row gap-4 xl:flex-row lg:flex-row md:flex-row sm:flex-col xs:flex-col ">
-          <Link className="btn btn-primary bg-indigo-900 border-none  " href="/finddoctor" >
+          <Link className="btn btn-primary bg-indigo-900 border-none  " href="/find-a-doctor" >
             Find A Orthopaedician
             <span>
               <Icon

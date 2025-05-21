@@ -35,7 +35,7 @@ export async function POST(request: Request) {
     //   SELECT * FROM users WHERE email = ${email}
     // `
       const existingUsers = await sql`
-      SELECT * FROM members WHERE email = ${email}
+      SELECT * FROM member WHERE email = ${email}
     `;
 
 
@@ -49,9 +49,9 @@ export async function POST(request: Request) {
 
     // Create user
     await sql`
-      INSERT INTO Members (name, email, password)
+      INSERT INTO Member (name, email, password)
       VALUES (${name}, ${email}, ${hashedPassword})
-    `
+    `;
 
     return NextResponse.json({ success: true })
   } catch (error) {

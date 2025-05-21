@@ -1,68 +1,79 @@
-import { AdminLayout } from "./admin-layout";
-import { Card, CardHeader, CardTitle, CardContent } from "../../components/ui/card";
-import { Activity, Users, FileText, Calendar, User } from "lucide-react";
-import { requireAuth } from "../../lib/session"
-import { LogoutButton } from "../../components/auth/logout-button"
-export default async function AdminDashboard() {
-  const session = await requireAuth() as { name?: string; email?: string }
-  const stats = [
-    { title: "Total Members", value: "1,254", icon: <Users className="h-6 w-6" /> },
-    { title: "Active Events", value: "8", icon: <Calendar className="h-6 w-6" /> },
-    { title: "Recent Posts", value: "24", icon: <FileText className="h-6 w-6" /> },
-    { title: "Site Activity", value: "High", icon: <Activity className="h-6 w-6" /> },
-  ];
-  console.log(session)
+import { DashboardLayout } from "../../components/dashboard-layout"
+// import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../components/ui/card"
+// import { Users, FileText, Calendar } from "lucide-react"
+// import ProfileTable from "../profiletable/ProfileTable"
+
+export default function DashboardPage() {
   return (
-    <AdminLayout>
-      <div className="flex items-center gap-4">
-        <div className="flex items-center gap-2">
-          <User className="h-5 w-5" />
-          <span>{(session.name as string) || (session.email as string)}</span>
+    <DashboardLayout>
+      {/* <ProfileTable /> */}
+
+      <div className="flex min-h-screen flex-col items-center justify-center p-2">
+        <div className="max-w-md text-center">
+          <h1 className="mb-4 text-4xl font-bold">Admin Dashboard</h1>
+          <p className="mb-8 text-muted-foreground">
+            A comprehensive admin dashboard with sidebar navigation, dynamic content loading, and multiple admin features.
+          </p>
+          {/* <Button asChild>
+              <Link href="/dashboard">Go to Dashboard</Link>
+            </Button> */}
         </div>
-        <LogoutButton />
       </div>
-      <div className="space-y-6">
-        <h1 className="text-2xl font-bold">Dashboard Overview</h1>
-
-        {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {stats.map((stat, index) => (
-            <Card key={index}>
-              <CardHeader className="flex flex-row items-center justify-between pb-2">
-                <CardTitle className="text-sm font-medium text-muted-foreground">
-                  {stat.title}
-                </CardTitle>
-                {stat.icon}
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">{stat.value}</div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {/* Recent Activity */}
-        <Card>
-          <CardHeader>
-            <CardTitle>Recent Activity</CardTitle>
+      {/* <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Total Users</CardTitle>
+            <Users className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="space-y-4">
-              {[1, 2, 3, 4, 5].map((item) => (
-                <div key={item} className="flex items-center justify-between p-2 hover:bg-gray-50 rounded">
-                  <div>
-                    <p className="font-medium">New member registered</p>
-                    <p className="text-sm text-muted-foreground">
-                      John Doe joined the organization
-                    </p>
-                  </div>
-                  <span className="text-sm text-muted-foreground">2 hours ago</span>
-                </div>
-              ))}
-            </div>
+            <div className="text-2xl font-bold">1,234</div>
+            <p className="text-xs text-muted-foreground">+12% from last month</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">News Published</CardTitle>
+            <FileText className="h-4 w-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">45</div>
+            <p className="text-xs text-muted-foreground">+3 new this week</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Blog Posts</CardTitle>
+            <FileText className="h-4 w-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">78</div>
+            <p className="text-xs text-muted-foreground">+5 new this month</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Upcoming Events</CardTitle>
+            <Calendar className="h-4 w-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">12</div>
+            <p className="text-xs text-muted-foreground">Next event in 3 days</p>
           </CardContent>
         </Card>
       </div>
-    </AdminLayout>
-  );
+      <div className="mt-6">
+        <Card>
+          <CardHeader>
+            <CardTitle>Welcome to your Admin Dashboard</CardTitle>
+            <CardDescription>Manage your content, users, and settings from this central dashboard.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p>
+              Use the sidebar navigation to access different sections of the admin panel. You can post news, blogs,
+              events, and manage various aspects of your site.
+            </p>
+          </CardContent>
+        </Card> */}
+
+    </DashboardLayout>
+  )
 }

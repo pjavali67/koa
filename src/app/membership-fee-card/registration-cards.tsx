@@ -71,24 +71,24 @@ export default function RegistrationCards() {
   return (
     <div className="container mx-auto py-8">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <RegistrationCard
+        {/* <RegistrationCard
           title="KOA Guest Registration"
           description="This registration is for a professional from a non-orthopedic background, such as a company executive or HR manager, seeking to publish events and jobs on the website."
           buttonText="Click Here"
           buttonLink="/"
           isOnline={true}
-        />
+        /> */}
         <RegistrationCard
-          title="IOA Life Membership"
+          title="IOA Life Membership Form"
           description="To register online, please go to the link below."
           buttonText="Click Here"
           buttonLink="https://ioaindia.org/Webview/NewMember"
           isOnline={true}
         />
         <RegistrationCard
-          title="IOA Life Membership"
+          title="IOA Life Membership Form"
           description="To register offline, please download the application below."
-          buttonText="Download"
+          buttonText="Download Form"
           buttonLink="#"
           isOnline={false}
           downloadLink="https://koaindia.org/wp-content/uploads/2022/09/IOA-Membership-Form.pdf"

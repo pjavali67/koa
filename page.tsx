@@ -4,7 +4,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 // import type { NextPage } from 'next';
-import { Doctor } from "../../../../types/doctor"
+import { Doctor } from "./types/doctor"
 
 const ProfileOfDoctor= ({ params }: { params: { slugid: number } }) => {
   // const router = useRouter();

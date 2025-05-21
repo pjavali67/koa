@@ -31,7 +31,7 @@ export const authOptions: NextAuthOptions = {
           }
 
           const members = await sql`
-            SELECT * FROM members WHERE email = ${credentials.email}
+            SELECT * FROM member WHERE email = ${credentials.email}
           `;
 
           const member = members[0];

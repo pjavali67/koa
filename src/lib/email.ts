@@ -61,6 +61,7 @@
 import nodemailer from "nodemailer";
 
 interface SendEmailParams {
+  from?: string;
   to: string;
   subject: string;
   html: string;
@@ -87,7 +88,7 @@ export async function sendEmail({ to, subject, html }: SendEmailParams) {
     });
 
     const info = await transporter.sendMail({
-      from: `"Dev Mailer" <${testAccount.user}>`,
+      from: `"Praveen" <${testAccount.user}>`,
       to,
       subject,
       html,

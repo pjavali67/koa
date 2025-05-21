@@ -11,16 +11,22 @@ import { Button } from "../../components/ui/button";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
-import { LogoutButton } from "../auth/logout-button";
+//import { LogoutButton } from "../auth/logout-button";
+import { GearDropdown } from "../../lib/nav-gear"
+// import { LoginButton } from "../auth/login-button";
+import { LoginButton } from "../../lib/login-auth-button";
+// import { useRouter } from "next/navigation";
 export default function NavigationBar() {
+  // const router = useRouter();
   const [sessionOn, setSessionOn] = useState<ReturnType<typeof useSession>['data'] | null>(null);
   const [statusOn, seStatusOn] = useState<"authenticated" | "unauthenticated" | "loading">("loading");
   const { data: session, status } = useSession();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  console.log(statusOn)
+  console.log(session?.user?.name, "*****", status === "authenticated")
   useEffect(() => {
     setSessionOn(session ?? null);
     seStatusOn(status);
+
   }, [session, status]);
 
 
@@ -54,13 +60,19 @@ export default function NavigationBar() {
     { name: "News", href: "/news" },
     { name: "Events", href: "/events" },
     { name: "Blog", href: "/blog" },
-    
-   
+
+
   ];
 
   return (
+    <>
+
     <nav className="bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">   
+
+
+
         <div className="flex justify-between h-16">
           {/* Logo */}
           <div className="flex items-center ">
@@ -135,15 +147,17 @@ export default function NavigationBar() {
             </Button>
           </div>
           <div className="justify-center items-center  flex space-x-2 hidden md:flex">
-            {sessionOn?.user?.name ? (
-              <span className="text-bold text-xl"> Welcome {sessionOn?.user?.name} </span>
-            ) : <Link className="btn bg-purple-500 md:inline-flex" href="/login">Login</Link>}
+              {sessionOn?.user?.name &&
+                <span className="text-bold text-xl"> Welcome {sessionOn?.user?.name} </span>}
+              {/* )  <Link className="btn bg-purple-500 md:inline-flex" href="/login">Login</Link> */}
+              {!session?.user?.name && <LoginButton />}
+              {!session?.user && <Link className="btn  md:inline-flex bg-purple-500" href="/membership-fee-card">Join KOA</Link>}
 
-            <Link className="btn  md:inline-flex bg-purple-500" href="/membership-fee-card">Join KOA</Link>
-            {sessionOn?.user?.name ? <LogoutButton /> : null}
+              {sessionOn?.user?.name && <GearDropdown />}
+
           </div>
-        </div>
-      
+          </div>
+
       </div>
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
@@ -202,8 +216,12 @@ export default function NavigationBar() {
           </div>
         </div>
       )}
-      
+
     </nav>
+
+    </>
   );
 }
+
+
 

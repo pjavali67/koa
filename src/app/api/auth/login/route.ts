@@ -36,8 +36,8 @@ export async function POST(request: Request) {
 
     // Find user
     const users = await sql`
-      SELECT * FROM members WHERE email = ${email}
-    `
+      SELECT * FROM member WHERE email = ${email}
+    `;
 
     const user = users[0]
 

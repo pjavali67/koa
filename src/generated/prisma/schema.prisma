@@ -70,56 +70,57 @@ datasource db {
 
 //   @@map("a02_member_role")
 // }
-model Members {
-  id                   Int       @id @default(autoincrement())
-  email                String?   @unique @db.VarChar(100)
-  mobile               String?   @default("-") @db.VarChar(20)
-  password             String?   @db.VarChar(256)
+model Member {
+  id                   Int         @id @default(autoincrement())
+  email                String?     @unique @db.VarChar(100)
+  mobile               String?     @default("-") @db.VarChar(20)
+  password             String?     @db.VarChar(256)
   emailVerified        DateTime?
-  name                 String?   @default("-") @db.VarChar(256)
-  firstName            String?   @default("-") @db.VarChar(256)
-  lastName             String?   @default("-") @db.VarChar(45)
-  koa_no               String?   @default("A-1") @db.VarChar(8)
-  address_personal     String?   @default("-") @db.VarChar(256)
-  address_office       String?   @default("-") @db.VarChar(256)
-  img1                 String?   @default("n") @db.VarChar(1)
-  img2                 String?   @default("n") @db.VarChar(1)
-  img3                 String?   @default("n") @db.VarChar(1)
-  url_code             String?   @default("-") @db.VarChar(45)
+  name                 String?     @default("-") @db.VarChar(256)
+  firstName            String?     @default("-") @db.VarChar(256)
+  lastName             String?     @default("-") @db.VarChar(45)
+  koa_no               String?     @default("A-1") @db.VarChar(8)
+  address_personal     String?     @default("-") @db.VarChar(256)
+  address_office       String?     @default("-") @db.VarChar(256)
+  img1                 String?     @default("n") @db.VarChar(1)
+  img2                 String?     @default("n") @db.VarChar(1)
+  img3                 String?     @default("n") @db.VarChar(1)
+  url_code             String?     @default("-") @db.VarChar(45)
   para1                String?
   para2                String?
   para3                String?
-  nick_name            String?   @default("-") @db.VarChar(100)
-  mobile_no_office1    String?   @default("-") @db.VarChar(20)
-  mobile_no_office2    String?   @default("-") @db.VarChar(200)
-  ug_college           String?   @default("-") @db.VarChar(200)
-  ug_passout           String?   @default("-") @db.VarChar(40)
-  pg_college           String?   @default("-") @db.VarChar(200)
-  pg_passout           String?   @default("-") @db.VarChar(40)
-  proposer_name        String?   @default("-") @db.VarChar(256)
-  propose_koa_num      String?   @default("-") @db.VarChar(40)
-  seconded_name        String?   @default("-") @db.VarChar(256)
-  seconded_koa_num     String?   @default("-") @db.VarChar(40)
-  qualifications       String?   @db.VarChar(45)
-  website              String?   @default("-") @db.VarChar(45)
-  location_office      String?   @default("-") @db.VarChar(45)
-  whatsapp_office      String?   @default("-") @db.VarChar(45)
-  facebook_office      String?   @default("-") @db.VarChar(45)
-  socialmedia1_title   String?   @default("Instagram") @db.VarChar(45)
-  social_media1_handle String?   @default("-") @db.VarChar(100)
-  socialmedia2_title   String?   @default("X") @db.VarChar(45)
-  socialmedia2_handle  String?   @default("-") @db.VarChar(100)
-  dob                  DateTime? @db.Date
-  doj                  DateTime? @db.Date
-  status               String?   @default("applied") @db.VarChar(20)
-  type                 String?   @default("lifeMember") @db.VarChar(20)
+  nick_name            String?     @default("-") @db.VarChar(100)
+  mobile_no_office1    String?     @default("-") @db.VarChar(20)
+  mobile_no_office2    String?     @default("-") @db.VarChar(200)
+  ug_college           String?     @default("-") @db.VarChar(200)
+  ug_passout           String?     @default("-") @db.VarChar(40)
+  pg_college           String?     @default("-") @db.VarChar(200)
+  pg_passout           String?     @default("-") @db.VarChar(40)
+  proposer_name        String?     @default("-") @db.VarChar(256)
+  propose_koa_num      String?     @default("-") @db.VarChar(40)
+  seconded_name        String?     @default("-") @db.VarChar(256)
+  seconded_koa_num     String?     @default("-") @db.VarChar(40)
+  qualifications       String?     @db.VarChar(45)
+  website              String?     @default("-") @db.VarChar(45)
+  location_office      String?     @default("-") @db.VarChar(45)
+  whatsapp_office      String?     @default("-") @db.VarChar(45)
+  facebook_office      String?     @default("-") @db.VarChar(45)
+  socialmedia1_title   String?     @default("Instagram") @db.VarChar(45)
+  social_media1_handle String?     @default("-") @db.VarChar(100)
+  socialmedia2_title   String?     @default("X") @db.VarChar(45)
+  socialmedia2_handle  String?     @default("-") @db.VarChar(100)
+  dob                  DateTime?   @db.Date
+  doj                  DateTime?   @db.Date
+  status               String?     @default("applied") @db.VarChar(20)
+  type                 String?     @default("lifeMember") @db.VarChar(20)
   role_id              Int?
-  createdAt            DateTime? @default(now()) @map("created_at")
-  updatedAt            DateTime? @default(now()) @map("updated_at")
+  createdAt            DateTime?   @default(now()) @map("created_at")
+  updatedAt            DateTime?   @default(now()) @map("updated_at")
+  transationId         String?
+  blog                 Blog[]
+  role                 MemberRole? @relation(fields: [role_id], references: [role_id], onDelete: SetNull, onUpdate: Cascade)
 
-  role MemberRole? @relation(fields: [role_id], references: [role_id], onDelete: SetNull, onUpdate: Cascade)
-
-  @@map("members")
+  @@map("member")
 }
 
 model MemberRole {
@@ -127,7 +128,7 @@ model MemberRole {
   role_name        String  @unique @db.VarChar(191)
   role_description String?
 
-  members Members[]
+  member Member[]
 
   @@map("member_role")
 }
@@ -150,4 +151,77 @@ model PasswordResetToken {
 
   @@unique([email, token])
   @@map("password_reset_tokens")
+}
+
+model HeroCarousel {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  image       String
+  ctaText     String
+  ctaLink     String
+  isActive    Boolean
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model SmallCarousel {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  image       String
+  ctaText     String
+  ctaLink     String
+  isActive    Boolean
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Blog {
+  id      Int      @id @default(autoincrement())
+  title   String
+  author  String
+  date    DateTime
+  image   String?
+  content String?
+
+  MemberId Int
+  Member   Member @relation(fields: [MemberId], references: [id])
+
+  reviews  Review[]
+  comments Comment[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Review {
+  id        Int      @id @default(autoincrement())
+  content   String
+  rating    Int?
+  blogId    Int
+  blog      Blog     @relation(fields: [blogId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model Comment {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  comment   String
+  blogId    Int
+  blog      Blog     @relation(fields: [blogId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model News {
+  id          Int      @id @default(autoincrement())
+  title       String
+  author      String
+  date        DateTime
+  image       String?
+  description String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

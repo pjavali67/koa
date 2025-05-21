@@ -18,9 +18,10 @@ export default function DashboardPage() {
 
   return (
     <PageLayout title="News Dashboard">
-    <div className="m-full m-20 pr-20">
+      <div className="m-full m-20 pr-20">
       <h1 className="text-3xl font-bold mb-6">News Dashboard</h1>
       <TabSwitcher tabs={tabs} />
-      </div></PageLayout>
+      </div>
+    </PageLayout>
   );
 }

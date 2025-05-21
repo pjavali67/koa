@@ -34,29 +34,34 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <SessionProvider>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased  `}
       >
-        <div className="w-full h-screen  min-h-screen">
+
           <header>
+
             <nav>
               <div className="bg-cyan-600   ">
                 <TopBarActionLinks />
               </div>
             </nav>
             {/* <Navbar /> */}
-            <SessionProvider> <NavigationBar /></SessionProvider>
+            <NavigationBar />
             {/* <AuthProvider> <NavigationBar /></AuthProvider> */}
           </header>
-          <main>     <SessionProvider>{children}</SessionProvider></main>
+
+          <main>    {children}</main>
           <footer>
             {/* <Footer /> */}
-            <SessionProvider> <FooterComponent /> </SessionProvider>
+            <FooterComponent /> 
           </footer>
-        </div>
+
 
         <FlyonuiScript />
+
       </body>
+      </SessionProvider>
     </html>
   );
 }

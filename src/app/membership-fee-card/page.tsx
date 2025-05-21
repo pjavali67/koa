@@ -7,6 +7,31 @@ import { useRouter } from "next/navigation";
 
 export default function MembershipTiers() {
   const router = useRouter();
+  function joinLifemember() {
+    const query = new URLSearchParams({
+      plan: "Life ",
+      source: "mebership",
+    }).toString();
+
+    router.push(`/membership/form?${query}`);
+
+  }
+  function joinAssociateemember() {
+    const query = new URLSearchParams({
+      plan: "Associate ",
+      source: "mebership",
+    }).toString();
+
+    router.push(`/membership/form?${query}`);
+  }
+  function joinAffiliateMembership() {
+    const query = new URLSearchParams({
+      plan: "Affiliate ",
+      source: "mebership",
+    }).toString();
+
+    router.push(`/membership/form?${query}`);
+  }
   return (
     <div className="container mx-auto py-10 px-4">
       <h1 className="text-3xl font-bold text-center mb-10">Membership Tiers</h1>
@@ -80,7 +105,7 @@ export default function MembershipTiers() {
             </div>
           </CardContent>
           <CardFooter>
-            <Button className="w-full bg-purple-500 hover:bg-purple-600" onClick={() => { router.push('/membership') }}>Join KOA</Button>
+            <Button className="w-full bg-purple-500 hover:bg-purple-600" onClick={joinLifemember} >Join KOA</Button>
           </CardFooter>
         </Card>
 
@@ -154,7 +179,7 @@ export default function MembershipTiers() {
             </div>
           </CardContent>
           <CardFooter>
-            <Button className="w-full bg-purple-500 hover:bg-purple-600" onClick={() => { router.push('/membership') }}>Join KOA</Button>
+            <Button className="w-full bg-purple-500 hover:bg-purple-600" onClick={joinAssociateemember}>Join KOA</Button>
           </CardFooter>
         </Card>
 
@@ -228,7 +253,7 @@ export default function MembershipTiers() {
             </div>
           </CardContent>
           <CardFooter>
-            <Button className="w-full bg-purple-500 hover:bg-purple-600" onClick={() => { router.push('/membership') }}>Join KOA</Button>
+            <Button className="w-full bg-purple-500 hover:bg-purple-600" onClick={joinAffiliateMembership}>Join KOA</Button>
           </CardFooter>
         </Card>
       </div>
