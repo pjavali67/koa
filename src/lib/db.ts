@@ -1,21 +1,12 @@
-import { neon } from "@neondatabase/serverless"
+import { PrismaClient } from "@prisma/client";
 
-// Create a more resilient SQL client with proper error handling
-export const createDbClient = () => {
-  const connectionString = process.env.DATABASE_URL || process.env.POSTGRES_URL
+const globalForPrisma = globalThis as unknown as {
+  prisma: PrismaClient | undefined;
+};
 
-  if (!connectionString) {
-    console.error("No database connection string found in environment variables")
-    throw new Error("Database connection not configured")
-  }
+// Use existing client in development to prevent too many open connections
+export const db = globalForPrisma.prisma ?? new PrismaClient();
 
-  try {
-    return neon(connectionString)
-  } catch (error) {
-    console.error("Failed to create database client:", error)
-    throw error
-  }
+if (process.env.NODE_ENV !== "production") {
+  globalForPrisma.prisma = db;
 }
-
-// Export a singleton instance for common use
-export const sql = createDbClient()

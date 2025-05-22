@@ -1,16 +1,19 @@
-import type { Metadata } from "next";
+
+// import type { Metadata } from "next";
 import FlyonuiScript from "../components/FlyonuiScript";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import NavTopBar from "./NavTopBar/page";
 //import { AuthProvider } from "../lib/auth-provider";
 //import { Providers } from "./providers";
 //import Navbar from "../components/navbar";
 //import Footer from "../components/footer";
-import NavigationBar from "../components/custom-components/NavigationBar";
+// import NavigationBar from "../components/custom-components/NavigationBar";
 import TopBarActionLinks from "../components/TopBarActionLinks";
 import FooterComponent from "../components/custom-components/footer/FooterComponet";
-import { SessionProvider } from "next-auth/react";
+// import { SessionProvider } from "next-auth/react";
 
+// import { SessionProvider } from "next-auth/react";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -21,11 +24,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Welcome to Karnataka Orthopaedic Association",
-  description:
-    "This community has been setup for the Karnataka Orthopaedic Association Members and will attempt to be a high quality forum for academic discussion.",
-};
+// export const metadata: Metadata = {
+//   title: "Welcome to Karnataka Orthopaedic Association",
+//   description:
+//     "This community has been setup for the Karnataka Orthopaedic Association Members and will attempt to be a high quality forum for academic discussion.",
+// };
 
 export default function RootLayout({
   children,
@@ -34,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <SessionProvider>
+      {/* <SessionProvider> */}
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased  `}
       >
@@ -47,7 +50,7 @@ export default function RootLayout({
               </div>
             </nav>
             {/* <Navbar /> */}
-            <NavigationBar />
+          <NavTopBar />
             {/* <AuthProvider> <NavigationBar /></AuthProvider> */}
           </header>
 
@@ -61,7 +64,7 @@ export default function RootLayout({
         <FlyonuiScript />
 
       </body>
-      </SessionProvider>
+      {/* </SessionProvider> */}
     </html>
   );
 }
